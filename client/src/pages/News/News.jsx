@@ -1,15 +1,24 @@
-import React from 'react'
-import NewsCard from '../../components/NewsCard/NewsCard'
-import './news.css'
+import React from 'react';
+import { EventCard } from '../../components';
+import { useSelector } from 'react-redux';
+
 
 const News = () => {
-    const allposts = [{ id: 1 , title: "TItle", body:"No information given", imgLink: 'https://mediasole.ru/data/images/412/412388/23stunning-landscape-view-argentina.jpg' } , {id: 2, title: "hello" , body: "world", imgLink:"https://bugaga.ru/uploads/posts/2013-11/1385069022_zhivopisnye-mesta-2.jpg" }, {id: 3, title: "Post", body: "it'is Post", imgLink: 'https://storge.pic2.me/cm/5120x2880/816/58487211bf104.jpg'} ]
-    return (
-      <div className='news'>
-          {allposts.map((el) => 
-          <NewsCard news={el}/> )}
-      </div>
-            )
-   }
+  const products = useSelector((store) => store.products);
 
-export default News
+  return (
+    <div className="bg-white">
+    <div className="mx-auto max-w-2xl py-16 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+      <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+        {
+          products.map((product) => (
+            <EventCard product={ product }/>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+  );
+}
+
+export default News;
