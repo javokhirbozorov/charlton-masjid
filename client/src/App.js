@@ -18,7 +18,7 @@ function App() {
       <Provider store={store}>
           <Navbar/>
 
-          <div style={{ paddingTop: '80px' }}>
+          <div className='main'>
             <Routes>
               <Route path='/' element={ <Home/> }></Route>
               <Route path='/events' element={ <Events/> }></Route>
