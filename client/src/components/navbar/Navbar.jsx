@@ -25,11 +25,10 @@ const solutions = [
     icon: CursorArrowRaysIcon,
   },
   {
-    name: 'News',
-    href: '/news',
+    name: 'About',
+    href: '/about',
     icon: Squares2X2Icon,
   },
-
 ]
 
 
@@ -66,17 +65,13 @@ export default function Example() {
             
             {/*  DESCTOP MENU  */}
             <Popover.Group as="nav" className="hidden space-x-10 md:flex">
-
-              <Link to="/" className="text-base font-medium text-gray-500 hover:text-gray-900">
-                Home
-              </Link>
-              <Link to="/events" className="text-base font-medium text-gray-500 hover:text-gray-900">
-                Events
-              </Link>
-              <Link to="/about" className="text-base font-medium text-gray-500 hover:text-gray-900">
-                About
-              </Link>
-
+              {
+                solutions.map(el => (
+                  <Link to={ el.href } className="text-base font-medium text-gray-500 hover:text-gray-900">
+                    { el.name }
+                  </Link>
+                ))
+              }
             </Popover.Group>
 
 
