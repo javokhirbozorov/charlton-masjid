@@ -1,18 +1,39 @@
-import './App.css';
+import React from 'react';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
+
+
+/*  REDUX  */
 import { Provider } from 'react-redux';
 import { store } from './store';
-import { Events } from './pages';
-import { Footer } from './components';
+
+
+/*  PAGES & COMPONENTS  */
+import { Home, Events, AboutPage, Signup, Login } from './pages';
+import { Footer, Navbar } from './components';
+
 
 function App() {
   return (
-    <div className="App">
+    <BrowserRouter>
       <Provider store={store}>
-        <Events/> 
-        <Footer />
+          <Navbar/>
+
+          <div style={{ paddingTop: '80px' }}>
+            <Routes>
+              <Route path='/' element={ <Home/> }></Route>
+              <Route path='/events' element={ <Events/> }></Route>
+              <Route path='/about' element={ <AboutPage/> }></Route>
+              {/* <Route path='/signup' element={ <Signup/> }></Route> */}
+              {/* <Route path='/login' element={ <Login/> }></Route> */}
+            </Routes>
+          </div>
+
+          <Footer />
       </Provider>
-    </div>
+    
+    </BrowserRouter>
   );
 }
+
 
 export default App;
