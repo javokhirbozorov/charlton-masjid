@@ -1,7 +1,8 @@
 import React from 'react';
 import { LockClosedIcon } from '@heroicons/react/20/solid';
 
-export default function Registration() {
+
+export default function Signup() {
   return (
     <>
     <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
