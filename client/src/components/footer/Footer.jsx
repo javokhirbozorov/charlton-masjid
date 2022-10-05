@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function Footer() {
   return (
-        <footer className="bg-black dark:bg-gray-900">
+        <footer className="bg-black dark:bg-gray-900 footer">
             <div className="grid grid-cols-2 gap-8 py-8 px-6 md:grid-cols-4 md:flex md:items-center md:justify-around">
                 <div className='ml-10'>
                     <h2 className="mb-6 text-sm font-semibold text-gray-500 uppercase dark:text-gray-400 text-center">Company</h2>

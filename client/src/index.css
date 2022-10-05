@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html,body {
+  height: 100%;
+}
+
+.main {
+  padding-top: 80px;
+  flex: 1 0 auto;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+

@@ -28,7 +28,7 @@ function App() {
               </div>
             </div>
 
-            <div className='w-3/4'>
+            <div className='w-3/4 main'>
               <Routes>
                 <Route path='/' element={ <Home/> }></Route>
                 <Route path='/events' element={ <Events/> }></Route>
