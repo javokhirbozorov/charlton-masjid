@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Posts from './pages/Posts/Posts';
+import PostsList from './pages/Posts/PostsList';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-        <Posts />
+        <PostsList />
 );
 
 // If you want to start measuring performance in your app, pass a function
