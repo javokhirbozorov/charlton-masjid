@@ -1,12 +1,10 @@
-import React from 'react'
-import { Events, News } from '../index'
+import React, {useEffect, useState} from 'react'
+import PostsList from '../Posts/PostsList'
 
 const Home = () => {
-  return (
-    <div>
-      <News/>
-    </div>
-  )
+return(
+  <PostsList />
+)
 }
 
 export default Home
