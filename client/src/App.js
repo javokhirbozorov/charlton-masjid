@@ -12,6 +12,7 @@ import { Home, Events, AboutPage, Signup, Login } from './pages';
 import { Footer, Navbar } from './components';
 import Prayer from './components/Prayer/Prayer';
 
+
 function App() {
   return (
     <BrowserRouter>
