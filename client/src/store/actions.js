@@ -1,4 +1,4 @@
 import { types } from './types'
 
-export const deleteCard = (id) => ({ type: types.DELETE, payload: { id } });
+export const addAdmin = ({ username, email }) => ({ type: types.ADD_ADMIN, payload: { username, email } });
 

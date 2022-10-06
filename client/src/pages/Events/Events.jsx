@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 
 
 const Events = () => {
-  const products = useSelector((store) => store.products);
+  const products = useSelector((store) => store.post);
 
   return (
     <div className="bg-white">
@@ -12,7 +12,7 @@ const Events = () => {
         <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
           {
             products.map((product) => (
-              <EventCard product={ product }/>
+              <EventCard key={product.id} product={ product }/>
             ))
           }
         </div>

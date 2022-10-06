@@ -1,8 +1,13 @@
-import React from 'react';
+import { React, useState } from 'react';
 import { LockClosedIcon } from '@heroicons/react/20/solid';
-
+import { signUp } from '../../components/auth/auth';
 
 export default function Signup() {
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState('');
+
   return (
     <>
     <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
@@ -27,8 +32,9 @@ export default function Signup() {
                 User name
               </label>
               <input
-                id="userName"
-                name="userName"
+                onChange={(e) => setUsername(e.target.value)}
+                id="username"
+                name="username"
                 type="text"
                 required
                 className="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
@@ -40,6 +46,7 @@ export default function Signup() {
                 Email address
               </label>
               <input
+                onChange={(e) => setEmail(e.target.value)}
                 id="email-address"
                 name="email"
                 type="email"
@@ -54,6 +61,7 @@ export default function Signup() {
                 Password
               </label>
               <input
+                onChange={(e) => setPassword(e.target.value)}
                 id="password"
                 name="password"
                 type="password"
@@ -70,6 +78,7 @@ export default function Signup() {
 
           <div>
             <button
+              onClick={signUp(username, email, password)}
               type="submit"
               className="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
             >

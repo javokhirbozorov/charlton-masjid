@@ -1,7 +1,4 @@
-import { types } from './types';
-
-
-const initState = {
+export const initState = {
   products: [
     {
       id: 1,
@@ -67,15 +64,8 @@ const initState = {
       imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-04.jpg',
       imageAlt: 'Hand holding black machined steel mechanical pencil with brass tip and top.',
     }
-  ]
-}
-
-
-export const reducers = (state = initState, action) => {
-  switch (action.type) {
-      case types.DELETE: 
-      return;
-      default:
-          return state;
+  ],
+  admin: {
+    
   }
 }

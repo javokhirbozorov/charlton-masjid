@@ -1,3 +1,3 @@
 export const types = {
-  DELETE: 'DELETE'
+  ADD_ADMIN: 'ADD_ADMIN',
 }
