@@ -1,9 +1,20 @@
 import React, {useEffect, useState} from 'react'
-import PostsList from '../Posts/PostsList'
+import Carousel from '../../components/carousel/Carousel'
+import ThreeNewsList from '../../components/ThreeNewsList/ThreeNewsList'
+import ThreeEventsList from '../../components/ThreeEventsList/ThreeEventsList'
+import "./home.css"
 
 const Home = () => {
 return(
-  <PostsList />
+  <div>
+  <div>
+    <Carousel />
+  </div>
+  <div className='newsEvents'>
+    <ThreeNewsList />
+    <ThreeEventsList />
+  </div>
+  </div>
 )
 }
 
