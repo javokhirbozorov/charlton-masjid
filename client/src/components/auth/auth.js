@@ -1,16 +1,13 @@
 import { addAdmin } from "../../store/actions";
 import { useDispatch, useSelector } from "react-redux";
-// import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export const signUp = (email, username, password) => {
-  // console.log(email, username, password);
   return async () => {
+    // const admin = useSelector((state) => state.admin);
     try {
       const dispatch = useDispatch();
       const navigate = useNavigate();
-      // const [error, setError] = useState(false);
-      
       const response = await fetch('http://localhost:3000/api/signup', {
         method: 'POST',
         headers: {
@@ -32,6 +29,5 @@ export const signUp = (email, username, password) => {
     } catch (err) {
       console.log('=========>>>>');
     }
-
   };
 }
