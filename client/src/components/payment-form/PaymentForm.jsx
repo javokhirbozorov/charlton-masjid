@@ -53,8 +53,9 @@ const PaymentForm = () => {
                                             Exp.
                                         </label>
                                         <input
-                                            type="date"
+                                            type="text"
                                             name="card-exp"
+                                            maxLength={4}
                                             id="card-exp"
                                             autoComplete="exp"
                                             className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 sm:text-sm"
@@ -65,8 +66,10 @@ const PaymentForm = () => {
                                             CVV
                                         </label>
                                         <input
-                                            type="number"
+                                            type="text"
                                             name="card-cvv"
+                                            min={0}
+                                            maxLength={3}
                                             id="card-cvv"
                                             placeholder='ex:123'
                                             autoComplete="exp"
