@@ -29,6 +29,11 @@ const solutions = [
     href: '/about',
     icon: Squares2X2Icon,
   },
+  {
+    name: 'Posts',
+    href: '/posts',
+    icon: Squares2X2Icon,
+  },
 ]
 
 

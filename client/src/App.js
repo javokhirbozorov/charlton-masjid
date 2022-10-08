@@ -11,6 +11,7 @@ import { store } from './store';
 import { Home, Events, AboutPage, Signup, Login } from './pages';
 import { Footer, Navbar } from './components';
 import Prayer from './components/Prayer/Prayer';
+import PostsList from './pages/Posts/PostsList';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
                 <Route path='/about' element={ <AboutPage/> }></Route>
                 <Route path='/signup' element={ <Signup/> }></Route>
                 <Route path='/login' element={ <Login/> }></Route>
+                <Route path='/posts' element={<PostsList />}></Route>
               </Routes>
             </div>
 
