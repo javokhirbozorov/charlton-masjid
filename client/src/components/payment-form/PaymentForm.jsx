@@ -2,7 +2,7 @@ import React from 'react'
 
 const PaymentForm = () => {
     return (
-        <div className='border-solid border-2 w-96' >
+        <div className='border-solid border-2 w-96 ' >
             Payment Form
 
             <div className="hidden sm:block" aria-hidden="true">

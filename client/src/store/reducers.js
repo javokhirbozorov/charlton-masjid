@@ -80,6 +80,10 @@ const initState = {
       total: 4000,
       adminId: 1,
     }
+  ],
+
+  paymentSummary:[
+
   ]
 }
 
@@ -93,6 +97,12 @@ export const reducers = (state = initState, action) => {
         const donationData = action.payload;
 
         return {...state, donations:donationData}
+
+      case 'DONATE_SUM':
+        const imgLink = action.payload.imgLink
+        const title = action.payload.title
+        const donationTotalPercentage = action.payload.donationTotalPercentage
+        return {...state, paymentSummary:{imgLink, title, donationTotalPercentage}}
       default:
           return state;
   }
