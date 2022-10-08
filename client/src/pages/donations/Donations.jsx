@@ -36,12 +36,18 @@ const Donations = () => {
    <h1> Donations</h1>
 
     <Carousel/>
+    <div className=" mt-50 flex flex-wrap justify-center">
 
     {
       donationList.map((donation) =>(
-        <DonateCard donation = {donation} />
+
+          <DonateCard donation = {donation} />
+
+        
       ))
     }
+    </div>
+
    
     </>
   )

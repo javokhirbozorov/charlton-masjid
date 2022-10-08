@@ -6,7 +6,7 @@ function DonateCard({donation}) {
 
     <>
     
-    <div className="flex flex-wrap justify-center">
+   
   <div className="rounded-lg border-solid border-black shadow-lg mx-5  max-w-sm w-600 border-3 border-x-gray-800">
     <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
       <img className="rounded-t-lg" src={donation.imgLink} alt=""/>
@@ -52,7 +52,6 @@ function DonateCard({donation}) {
     </div>
   </div>
   
-</div>
     </>
   )
 }
