@@ -1,24 +1,25 @@
 import React from 'react'
 
-const DonateCard = () => {
+function DonateCard({donation}) {
+
   return (
+
     <>
-    <h1>DonateCard</h1>
+    
     <div className="flex flex-wrap justify-center">
   <div className="rounded-lg border-solid border-black shadow-lg mx-5  max-w-sm w-600 border-3 border-x-gray-800">
     <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
-      <img className="rounded-t-lg" src="https://mdbootstrap.com/img/new/standard/nature/182.jpg" alt=""/>
+      <img className="rounded-t-lg" src={donation.imgLink} alt=""/>
     </a>
     <div className="p-6">
-      <h5 className="text-gray-900 text-xl font-medium mb-2">Card title</h5>
+      <h5 className="text-gray-900 text-xl font-medium mb-2">{donation.title}</h5>
       <div className="w-full bg-gray-200 rounded-full">
-  <div className="bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-l-full w-9/12"> 75%</div>
+  <div className="bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-l-full w-9/12"> {donation.total}</div>
 </div>
 <div class="flex justify-center">
   <div class="mb-3 xl:w-96">
     <label for="exampleNumber0" class="form-label inline-block mb-2 text-gray-700"
-      >Number input</label
-    >
+      >Number input</label>
     <input
       type="number"
       className="

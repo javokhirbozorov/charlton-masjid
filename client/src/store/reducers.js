@@ -88,8 +88,13 @@ export const reducers = (state = initState, action) => {
   switch (action.type) {
       case types.DELETE: 
       return;
+
+      case 'LOAD_DONATIONS':
+        const donationData = action.payload;
+
+        return {...state, donations:donationData}
       default:
           return state;
   }
-  
+
 }

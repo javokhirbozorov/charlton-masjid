@@ -7,7 +7,7 @@ import { useDispatch } from 'react-redux'
 
 const Donations = () => {
   const donationList = useSelector((store) => store.donations)
-  console.log('😀😀😀',donationList);
+  console.log('😀😀😀 it is from redux store',donationList);
 
   const dispatch = useDispatch();
   React.useEffect(() =>{
@@ -36,7 +36,13 @@ const Donations = () => {
    <h1> Donations</h1>
 
     <Carousel/>
-    <DonateCard/>
+
+    {
+      donationList.map((donation) =>(
+        <DonateCard donation = {donation} />
+      ))
+    }
+   
     </>
   )
 }
