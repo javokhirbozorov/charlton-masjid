@@ -47,6 +47,19 @@ const PaymentForm = () => {
                                         />
                                     </div>
 
+                                    <div className="col-span-6 sm:col-span-6">
+                                        <label htmlFor="card-num" className="block text-sm font-medium text-gray-700">
+                                           Card Number
+                                        </label>
+                                        <input
+                                            type="text"
+                                            name="card-num"
+                                            id="card-num"
+                                            autoComplete="email"
+                                            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500 sm:text-sm"
+                                        />
+                                    </div>
+
 
                                     <div className="col-span-6 sm:col-span-4">
                                         <label htmlFor="card-exp" className="block text-sm font-medium text-gray-700">
