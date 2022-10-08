@@ -2,6 +2,12 @@ import React from 'react'
 
 function DonateCard({donation}) {
 
+  //* Calculating the percentage of the current donation
+// 1000 => 100%
+//400 => x
+const donationTotalPercentage = Math.floor(donation.total * 100 / donation.goal)
+
+
   return (
 
     <>
@@ -13,12 +19,14 @@ function DonateCard({donation}) {
     </a>
     <div className="p-6">
       <h5 className="text-gray-900 text-xl font-medium mb-2">{donation.title}</h5>
-      <div className="w-full bg-gray-200 rounded-full">
-  <div className="bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-l-full w-9/12"> {donation.total}</div>
-</div>
+
+      <label htmlFor="donationPercent">Reached <span className='font-bold'>{donationTotalPercentage}%</span> of the goal</label>
+      <input className="w-full bg-gray-200 rounded-full" type="range" id='donationPercent' name='donationPercent' value={donationTotalPercentage}/>
+  {/* <div className={`bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-l-full w-${donationTotalPercentage}`}> {donationTotalPercentage}</div> */}
+
 <div class="flex justify-center">
   <div class="mb-3 xl:w-96">
-    <label for="exampleNumber0" class="form-label inline-block mb-2 text-gray-700"
+    <label for="exampleNumber0" class="form-label  inline-block mb-2 text-gray-700"
       >Number input</label>
     <input
       type="number"
