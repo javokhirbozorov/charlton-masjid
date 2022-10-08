@@ -7,8 +7,6 @@ import { useDispatch } from 'react-redux'
 
 const Donations = () => {
   const donationList = useSelector((store) => store.donations)
-  console.log('😀😀😀 it is from redux store',donationList);
-
   const dispatch = useDispatch();
   React.useEffect(() =>{
       (async() =>{
@@ -26,17 +24,16 @@ const Donations = () => {
       
               const data = await response.json();
               if(data.err) throw new Error(data.err);
-              console.log('😀😀😀',data);
               dispatch({type:'LOAD_DONATIONS', payload:data})
   
        } )()
       },[dispatch])
   return (
     <>
-   <h1> Donations</h1>
+   <h1 className='text-center text-4xl mb-16' > Online Donations</h1>
 
     <Carousel/>
-    <div className=" mt-50 flex flex-wrap justify-center">
+    <div className="mt-32 flex flex-wrap justify-center">
 
     {
       donationList.map((donation) =>(

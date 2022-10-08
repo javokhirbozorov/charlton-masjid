@@ -3,7 +3,7 @@ import React from 'react'
 
 const Carousel = () => {
   return (
-<div id="carouselExampleIndicators" class="carousel slide relative" data-bs-ride="carousel">
+<div id="carouselExampleIndicators" class=" max-h-96 carousel slide relative" data-bs-ride="carousel">
   <div class="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
     <button
       type="button"
@@ -30,21 +30,21 @@ const Carousel = () => {
     <div className="carousel-item active float-left w-full">
       <img
         src="https://mdbcdn.b-cdn.net/img/new/slides/041.webp"
-        className="block w-full"
+        className="block max-h-96  w-full"
         alt="Wild Landscape"
       />
     </div>
     <div className="carousel-item float-left w-full">
       <img
         src="https://mdbcdn.b-cdn.net/img/new/slides/042.webp"
-        className="block w-full"
+        className="block max-h-96  w-full"
         alt="Camera"
       />
     </div>
     <div className="carousel-item float-left w-full">
       <img
         src="https://mdbcdn.b-cdn.net/img/new/slides/043.webp"
-        className="block w-full"
+        className="block max-h-96  w-full"
         alt="Exotic Fruits"
       />
     </div>
