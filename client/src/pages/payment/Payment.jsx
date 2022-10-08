@@ -6,7 +6,7 @@ const Payment = () => {
   return (
     <>
     <h1 className='text-center font-bold' >Payment</h1>
-    <div className="container flex">
+    <div className="container flex w-screen">
         <PaymentForm/>
         <PaymentSummary/>
     </div>
