@@ -8,7 +8,7 @@ import { store } from './store';
 
 
 /*  PAGES & COMPONENTS  */
-import { Home, Events, AboutPage, Signup, Login } from './pages';
+import { Home, Events, AboutPage, Signup, Login, Donations } from './pages';
 import { Footer, Navbar } from './components';
 import Prayer from './components/Prayer/Prayer';
 import PostsList from './pages/Posts/PostsList';
@@ -32,6 +32,7 @@ function App() {
                 <Route path='/signup' element={ <Signup/> }></Route>
                 <Route path='/login' element={ <Login/> }></Route>
                 <Route path='/posts' element={<PostsList />}></Route>
+                <Route path='/donations' element={<Donations />}></Route>
               </Routes>
             </div>
 

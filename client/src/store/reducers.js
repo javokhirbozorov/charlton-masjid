@@ -67,6 +67,19 @@ const initState = {
       imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-04.jpg',
       imageAlt: 'Hand holding black machined steel mechanical pencil with brass tip and top.',
     }
+  ],
+
+
+  //* In donations will be donation criterias
+  donations:[
+    {
+      title: 'For masjid',
+      body: "For Masjid BOdy Lorem",
+      imgLink: 'https://mdbootstrap.com/img/new/standard/nature/182.jpg',
+      goal: 5000,
+      total: 4000,
+      adminId: 1,
+    }
   ]
 }
 
@@ -78,4 +91,5 @@ export const reducers = (state = initState, action) => {
       default:
           return state;
   }
+  
 }
