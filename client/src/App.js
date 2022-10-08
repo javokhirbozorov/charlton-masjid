@@ -12,6 +12,7 @@ import { Home, Events, AboutPage, Signup, Login, Donations } from './pages';
 import { Footer, Navbar } from './components';
 import Prayer from './components/Prayer/Prayer';
 import PostsList from './pages/Posts/PostsList';
+import Payment from './pages/payment/Payment';
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
                 <Route path='/login' element={ <Login/> }></Route>
                 <Route path='/posts' element={<PostsList />}></Route>
                 <Route path='/donations' element={<Donations />}></Route>
+                <Route path='/payment' element={<Payment/>}/>
               </Routes>
             </div>
 

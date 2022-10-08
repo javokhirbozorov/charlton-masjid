@@ -5,6 +5,7 @@ import AboutPage from './about/About';
 import Signup from './Auth/Signup';
 import Login from './Auth/Login';
 import Donations from './donations/Donations'
+import Payment from './payment/Payment';
 
 
 export { 
@@ -14,5 +15,6 @@ export {
   News, 
   Signup, 
   Login,
-  Donations
+  Donations,
+  Payment
 };
