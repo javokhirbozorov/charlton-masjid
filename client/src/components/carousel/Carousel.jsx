@@ -3,8 +3,8 @@ import React from 'react'
 
 const Carousel = () => {
   return (
-<div id="carouselExampleIndicators" class=" max-h-96 carousel slide relative" data-bs-ride="carousel">
-  <div class="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
+<div id="carouselExampleIndicators" className=" max-h-96 carousel slide relative" data-bs-ride="carousel">
+  <div className="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
     <button
       type="button"
       data-bs-target="#carouselExampleIndicators"
