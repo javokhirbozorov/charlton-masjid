@@ -1,18 +1,37 @@
 import React from 'react'
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+
 function DonateCard({ donation }) {
 
 const dispatch = useDispatch();
+
+
+const[donationAmount, setDonationAmount] = useState(0)
   //* Calculating the percentage of the current donation
   // 1000 => 100%
   //400 => x
   const donationTotalPercentage = Math.floor(donation.total * 100 / donation.goal)
 
+
+  //* money input 
+  const moneyInputHandler = (event)=>{
+    setDonationAmount(event.target.value);
+    console.log(donationAmount);
+
+  }
+
+
   const donateBtnClick = () =>{
-    const imgLink = donation.imgLink;
-    const title = donation.title
-    dispatch({type:'DONATE_SUM', payload:{imgLink,title,donationTotalPercentage}})
+if(donationAmount >= 3){
+  const imgLink = donation.imgLink;
+  const title = donation.title
+  dispatch({type:'DONATE_SUM', payload:{imgLink,title,donationTotalPercentage, donationAmount}})
+} else{
+  alert('The minimum amount is £3')
+}
+   
   }
 
   return (
@@ -35,7 +54,7 @@ const dispatch = useDispatch();
             <div className="mb-3 xl:w-96">
               <div className="flex my-5">
                 <span className='text-2xl mx-2'>£</span>
-                <input
+                <input  onChange={moneyInputHandler}
                   type="number"
                   min={0}
                   className="
@@ -66,10 +85,18 @@ const dispatch = useDispatch();
           </div>
           <div onClick={donateBtnClick} className="donateBtns ">
 
-            <Link to={'/payment'}
-            type="button" className="my-10 inline-block px-6 py-2.5 bg-green-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
-              Donate
-            </Link>
+            {
+             donationAmount >=3 ?
+              <Link to={'/payment'}
+              type="button" className="my-10 inline-block px-6 py-2.5 bg-green-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
+                Donate
+              </Link>
+              :
+              <button 
+            type="button" className="my-10 inline-block px-6 py-2.5 bg-gray-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
+              Minimum £3
+            </button>
+            }
 
             <button
              type="button" className="inline-block px-6 py-2 border-2 border-blue-400 text-blue-400 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out">

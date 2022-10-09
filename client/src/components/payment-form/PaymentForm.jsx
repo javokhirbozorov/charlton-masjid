@@ -1,6 +1,34 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
+
+
 
 const PaymentForm = () => {
+
+const donationAmount = useSelector((store)=>store.paymentSummary.donationAmount)
+    const paymentSubmitHandler = async(event)=>{
+        event.preventDefault()
+        try{
+            const response = await fetch('http://localhost:3001/donations/makePayment', {
+                method:"GET",
+                headers:{
+                    'Content-Type':'application/json',
+                },
+               
+            })
+
+            if(response.status ===200){
+                alert('Payment was Successful')
+            }else{
+                alert('Payment Failed')
+            }
+
+        }catch(err){
+            alert(err)
+                console.log(err)}
+       
+
+    }
     return (
         <div className='border-solid border-2 w-96 ' >
             Payment Form
@@ -11,11 +39,9 @@ const PaymentForm = () => {
                 </div>
             </div>
 
-            <div className="mt-10 sm:mt-0">
-
-
+            <div className="mt-10 sm:mt-0"> 
                 <div className="mt-5 md:col-span-2 md:mt-0">
-                    <form action="#" method="POST">
+                    <form onSubmit={paymentSubmitHandler} action="http://localhost:3001/donations/makePayment" method="POST">
                         <div className="overflow-hidden shadow sm:rounded-md">
                             <div className="bg-white px-4 py-5 sm:p-6">
                                 <div className="grid grid-cols-6 gap-6">
@@ -23,7 +49,8 @@ const PaymentForm = () => {
                                         <label htmlFor="first-name" className="block text-sm font-medium text-gray-700">
                                             Name on card
                                         </label>
-                                        <input
+                                        <input 
+                                        required
                                             type="text"
                                             name="first-name"
                                             id="first-name"
@@ -39,6 +66,7 @@ const PaymentForm = () => {
                                             Email address
                                         </label>
                                         <input
+                                        required
                                             type="text"
                                             name="email-address"
                                             id="email-address"
@@ -52,7 +80,10 @@ const PaymentForm = () => {
                                            Card Number
                                         </label>
                                         <input
-                                            type="text"
+                                        required
+                                        maxLength={16}
+                                        minLength={16}
+                                            type="number"
                                             name="card-num"
                                             id="card-num"
                                             autoComplete="email"
@@ -66,8 +97,10 @@ const PaymentForm = () => {
                                             Exp.
                                         </label>
                                         <input
+                                        required
                                             type="text"
                                             name="card-exp"
+                                            minLength={4}
                                             maxLength={4}
                                             id="card-exp"
                                             autoComplete="exp"
@@ -79,9 +112,11 @@ const PaymentForm = () => {
                                             CVV
                                         </label>
                                         <input
+                                        required
                                             type="text"
                                             name="card-cvv"
                                             min={0}
+                                            minLength={3}
                                             maxLength={3}
                                             id="card-cvv"
                                             placeholder='ex:123'
