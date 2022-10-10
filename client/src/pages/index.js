@@ -6,6 +6,7 @@ import Signup from './Auth/Signup';
 import Login from './Auth/Login';
 import Donations from './donations/Donations'
 import Payment from './payment/Payment';
+import SuccessPage from '../components/success-page/SuccessPage';
 
 
 export { 
@@ -16,5 +17,6 @@ export {
   Signup, 
   Login,
   Donations,
-  Payment
+  Payment,
+  SuccessPage
 };

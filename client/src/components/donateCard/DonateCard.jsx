@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
-function DonateCard({ donation }) {
+function DonateCard({ donation, id }) {
 
 const dispatch = useDispatch();
 
@@ -26,8 +26,9 @@ const[donationAmount, setDonationAmount] = useState(0)
   const donateBtnClick = () =>{
 if(donationAmount >= 3){
   const imgLink = donation.imgLink;
-  const title = donation.title
-  dispatch({type:'DONATE_SUM', payload:{imgLink,title,donationTotalPercentage, donationAmount}})
+  const title = donation.title;
+
+  dispatch({type:'DONATE_SUM', payload:{id,imgLink,title,donationTotalPercentage, donationAmount}})
 } else{
   alert('The minimum amount is £3')
 }
