@@ -1,13 +1,22 @@
 import { React, useState } from 'react';
 import { LockClosedIcon } from '@heroicons/react/20/solid';
-import { signUp } from '../../components/auth/auth';
+import { signUpThunk } from '../../store/actions'
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 export default function Signup() {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [username, setUsername] = useState('');
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
+  const formHeandler = (e) => {
+    e.preventDefault();
+    dispatch(signUpThunk( { email, password, username }, navigate));
+  }
+  
   return (
     <>
     <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
@@ -24,11 +33,10 @@ export default function Signup() {
           Registration
           </h2>
         </div>
-        <form className="mt-8 space-y-6" action="http://localhost:3000/api/signup" method="POST">
-          <input type="hidden" name="remember" defaultValue="true" />
+        <form className="mt-8 space-y-6" onSubmit={formHeandler}>
           <div className="-space-y-px rounded-md shadow-sm">
           <div>
-              <label htmlFor="email-address" className="sr-only">
+              <label htmlFor="username" className="sr-only">
                 User name
               </label>
               <input
@@ -78,7 +86,6 @@ export default function Signup() {
 
           <div>
             <button
-              onClick={signUp(username, email, password)}
               type="submit"
               className="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
             >

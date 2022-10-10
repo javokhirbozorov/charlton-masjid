@@ -2,11 +2,27 @@ const bcrypt = require('bcrypt');
 
 const { Admin } = require('../../db/models');
 
-const signIn = (req, res) => {
-  res.json({ message: 'Hello' });
+const login = async (req, res) => {
+  const { email, password } = req.body;
+  try {
+    const admin = await Admin.findOne({ where: { email }, raw: true });
+    if (admin) {
+      const passCheck = await bcrypt.compare(password, admin.password);
+      if (passCheck) {
+        res.json({ logIn: 'Done' });
+      } else {
+        res.json({ error: 'Invalid password' });
+      }
+    } else {
+      res.json({ notFound: 'User not found' });
+    }
+  } catch (error) {
+    res.send(`Error ------> ${error}`);
+  }
 };
 
 const signUp = async (req, res) => {
+  console.log('======>>>');
   const { username, email, password } = req.body;
   if (email && username && password) {
     try {
@@ -24,4 +40,4 @@ const signUp = async (req, res) => {
   }
 };
 
-module.exports = { signUp, signIn };
+module.exports = { signUp, login };

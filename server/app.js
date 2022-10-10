@@ -10,17 +10,17 @@ const authRouter = require('./src/routes/authRoute');
 
 const app = express();
 
+const corsOptions = {
+  credentials: true,
+  origin: '*',
+};
+
+app.use(cors(corsOptions));
+
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, '../public/')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-const corsOptions = {
-  credentials: true,
-  origin: 'http://localhost:3001/signup',
-};
-
-app.use(cors(corsOptions));
 
 const PORT = process.env.PORT || 3003;
 

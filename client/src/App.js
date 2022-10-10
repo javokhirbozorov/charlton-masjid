@@ -1,6 +1,6 @@
 import React from 'react';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 
 /*  REDUX  */
 import { Provider } from 'react-redux';
@@ -19,10 +19,9 @@ function App() {
           <Navbar/>
 
           <div className='flex justify-center relative'  style={{ padding: '80px 30px'  }}>
-
               <Prayer />
+            <div className='main'>
 
-            <div className='w-3/4 main'>
               <Routes>
                 <Route path='/' element={ <Home/> }></Route>
                 <Route path='/events' element={ <Events/> }></Route>
