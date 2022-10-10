@@ -1,10 +1,24 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { EventCard } from '../../components';
 import { useSelector } from 'react-redux';
 
 
 const Events = () => {
-  const products = useSelector((store) => store.products);
+      const [products, setEvents] = useState([])
+
+  useEffect(() => {
+    (async () => {
+      const res = await fetch('http://localhost:3001/events', {
+        method: "GET",
+        headers: {
+          'Content-Type':'application/json'
+        }
+      });
+      const data = await res.json()
+      setEvents(data)
+    })()
+              
+          }, [])
 
   return (
     <div className="bg-white">
