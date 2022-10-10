@@ -13,6 +13,7 @@ import { Footer, Navbar } from './components';
 import Prayer from './components/Prayer/Prayer';
 import PostsList from './pages/Posts/PostsList';
 import Payment from './pages/payment/Payment';
+import SuccessPage from './components/success-page/SuccessPage';
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
                 <Route path='/posts' element={<PostsList />}></Route>
                 <Route path='/donations' element={<Donations />}></Route>
                 <Route path='/payment' element={<Payment/>}/>
+                <Route path='/success' element={<SuccessPage/>}/>
               </Routes>
             </div>
 

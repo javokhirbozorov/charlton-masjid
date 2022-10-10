@@ -103,7 +103,8 @@ export const reducers = (state = initState, action) => {
         const title = action.payload.title
         const donationTotalPercentage = action.payload.donationTotalPercentage
         const donationAmount = action.payload.donationAmount
-        return {...state, paymentSummary:{imgLink, title, donationTotalPercentage, donationAmount}}
+        const donationId = action.payload.id
+        return {...state, paymentSummary:{donationId,imgLink, title, donationTotalPercentage, donationAmount}}
       default:
           return state;
   }
