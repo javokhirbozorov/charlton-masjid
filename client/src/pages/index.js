@@ -4,6 +4,8 @@ import News from './News/News'
 import AboutPage from './about/About';
 import Signup from './Auth/Signup';
 import Login from './Auth/Login';
+import Donations from './donations/Donations'
+import Payment from './payment/Payment';
 
 
 export { 
@@ -12,5 +14,7 @@ export {
   AboutPage, 
   News, 
   Signup, 
-  Login 
+  Login,
+  Donations,
+  Payment
 };
