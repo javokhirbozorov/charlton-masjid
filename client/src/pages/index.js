@@ -16,7 +16,7 @@ export {
   News, 
   Signup, 
   Login,
-  Admin
+  Admin,
   Donations,
   Payment
 };

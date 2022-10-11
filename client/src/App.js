@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 import { store } from './store';
 
 
-import { Home, Events, AboutPage, Signup, Login, Donations } from './pages';
+import { Home, Events, AboutPage, Signup, Admin, Login, Donations } from './pages';
 import { Footer, Navbar } from './components';
 import Prayer from './components/Prayer/Prayer';
 import PostsList from './pages/Posts/PostsList';
