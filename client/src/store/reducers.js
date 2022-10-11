@@ -36,7 +36,7 @@ const initState = {
       imageAlt: 'Hand holding black machined steel mechanical pencil with brass tip and top.',
     },
     {
-      id: 1,
+      id: 5,
       name: 'Earthen Bottle',
       href: '#',
       price: '$48',
@@ -44,7 +44,7 @@ const initState = {
       imageAlt: 'Tall slender porcelain bottle with natural clay textured body and cork stopper.',
     },
     {
-      id: 2,
+      id: 6,
       name: 'Nomad Tumbler',
       href: '#',
       price: '$35',
@@ -52,7 +52,7 @@ const initState = {
       imageAlt: 'Olive drab green insulated bottle with flared screw lid and flat top.',
     },
     {
-      id: 3,
+      id: 7,
       name: 'Focus Paper Refill',
       href: '#',
       price: '$89',
@@ -60,7 +60,7 @@ const initState = {
       imageAlt: 'Person using a pen to cross a task off a productivity paper card.',
     },
     {
-      id: 4,
+      id: 8,
       name: 'Machined Mechanical Pencil',
       href: '#',
       price: '$35',
