@@ -7,7 +7,8 @@ import { Provider } from 'react-redux';
 import { store } from './store';
 
 
-import { Home, Events, AboutPage, Signup, Admin, Login, Donations } from './pages';
+/*  PAGES & COMPONENTS  */
+import { Home, Events, AboutPage, Signup, Login } from './pages';
 import { Footer, Navbar } from './components';
 import Prayer from './components/Prayer/Prayer';
 import PostsList from './pages/Posts/PostsList';
@@ -55,8 +56,6 @@ function App() {
                 </Route>
                 
                 <Route path='/posts' element={<PostsList />}></Route>
-                <Route path='/donations' element={<Donations />}></Route>
-                <Route path='/payment' element={<Payment/>}/>
               </Routes>
             </div>
 
