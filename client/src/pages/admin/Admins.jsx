@@ -21,6 +21,20 @@ const Admins = () => {
           setAdmins(data)
         })()
               }, [])
+
+              const DelAdmin = async function (e) {
+                const response = await fetch('http://localhost:3001/deladmin', {
+                  method: "POST",
+                  headers: {
+                    'Content-Type': 'application/json',
+                  },
+                  body: JSON.stringify({id: e.target.id })
+                })
+                const result = response.json().then((data) => alert(data.delete))
+                const deladmin = admins.filter((el) => el.id !== e.target.id)
+                setAdmins(deladmin);
+                dispatch(Alladmins(deladmin)); 
+              }
             
   return (
     <ul className={ styles.navComponent }>
@@ -29,7 +43,7 @@ const Admins = () => {
           <li key={ el.id } className={ styles.navComponent_item }> 
            <div className={ styles.navComponent_item_date }>{ el.id }</div>
       <p>{ el.username }</p>
-      <button id={ el.id } className={ styles.navComponent_item_btn }> Delete </button> 
+      <button id={ el.id } onClick={DelAdmin} className={ styles.navComponent_item_btn }> Delete </button> 
           </li>
         ))
       }

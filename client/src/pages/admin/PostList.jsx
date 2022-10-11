@@ -1,18 +1,32 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
-import Item from './Items'
+import React, {useEffect} from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import PostItem from './PostItem'
 import styles from "./admin.module.css"
+import { Allposts } from '../../store/actions'
 
 const PostList = () => {
-  
+  const dispatch = useDispatch();
     const posts = useSelector((state) => state.posts)
+
+    useEffect(() => {
+      (async () => {
+        const res = await fetch('http://localhost:3001/posts', {
+          method: "GET",
+          headers: {
+            'Content-Type':'application/json'
+          }
+        });
+        const data = await res.json()
+        dispatch(Allposts(data))
+      })()   
+            }, [])
 
   return (
     <ul className={ styles.navComponent }>
       {
         posts.map(el => (
           <li key={ el.id } className={ styles.navComponent_item }> 
-            <Item elem={ el }/>
+            <PostItem elem={ el }/>
           </li>
         ))
       }

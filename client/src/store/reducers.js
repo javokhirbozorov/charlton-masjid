@@ -72,14 +72,7 @@ const initState = {
 
   //* In donations will be donation criterias
   donations:[
-    {
-      title: 'For masjid',
-      body: "For Masjid BOdy Lorem",
-      imgLink: 'https://mdbootstrap.com/img/new/standard/nature/182.jpg',
-      goal: 5000,
-      total: 4000,
-      adminId: 1,
-    }
+
   ],
 
   paymentSummary:[

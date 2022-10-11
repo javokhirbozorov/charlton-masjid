@@ -22,6 +22,8 @@ import PostList from './pages/admin/PostList';
 import Admins from './pages/admin/Admins';
 import AddNewPostForm from './pages/admin/AddNewPostForm';
 import AddNewNewsForm from './pages/admin/AddNewNewsForm';
+import DonationsList from './pages/admin/DonationsList';
+import AddNewDonationForm from './pages/admin/AddNewDonationForm';
 
 
 
@@ -52,14 +54,14 @@ function App() {
 
                 <Route path='/admin' element={ <Admin/> }>
                   <Route path='news' element={ <NewsList/> }/>
-                  <Route path='donates' element={ <Login/> }/>
+                  <Route path='donates' element={ <DonationsList/> }/>
                   <Route path='events' element={ <EventsList/> }/>
                   <Route path='admins' element={<Admins />}/>
                   <Route path='posts' element={ <PostList/> }/>
                   <Route path='events/new' element={ <AddNewEventForm/> }/>
                   <Route path='news/new' element={ <AddNewNewsForm/> }/>
                   <Route path='posts/new' element={ <AddNewPostForm/> }/>
-                  <Route path='donates/new' element={ <AddNewEventForm/> }/>
+                  <Route path='donates/new' element={ <AddNewDonationForm/> }/>
                   <Route path='admins/newAdmin' element={ <AddNewUserForm/> }/>
                 </Route>
                 

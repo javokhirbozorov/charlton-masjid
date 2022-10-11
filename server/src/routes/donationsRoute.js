@@ -3,7 +3,7 @@ const { Donation } = require('../../db/models');
 
 router.get('/', async (req, res) => {
   try {
-    const donationData = await Donation.findAll({ order: ['createdAt'] });
+    const donationData = await Donation.findAll({ raw: true });
 
     res.json(donationData);
   } catch (err) {

@@ -16,6 +16,13 @@ const NewEventRoute = require('./src/routes/NewEventRoute');
 const NewPostRoute = require('./src/routes/NewPostRoute');
 const NewNewsRoute = require('./src/routes/NewNewsRoute');
 const NewAdminRoute = require('./src/routes/NewAdminRoute');
+const NewDonationRoute = require('./src/routes/NewDonationRoute');
+const donationsRoute = require('./src/routes/donationsRoute');
+const DelPostRoute = require('./src/routes/DelPostRoute');
+const DelNewsRoute = require('./src/routes/DelNewsRoute');
+const DelEventRoute = require('./src/routes/DelEventRoute');
+const DelDonateRoute = require('./src/routes/DelDonateRoute');
+const DelAdminRoute = require('./src/routes/DelAdminRoute');
 
 const app = express();
 
@@ -39,6 +46,13 @@ app.use('/newevent', NewEventRoute);
 app.use('/newpost', NewPostRoute);
 app.use('/newnews', NewNewsRoute);
 app.use('/newadmin', NewAdminRoute);
+app.use('/newdonation', NewDonationRoute);
+app.use('/donations', donationsRoute);
+app.use('/delpost', DelPostRoute);
+app.use('/delnews', DelNewsRoute);
+app.use('/delevent', DelEventRoute);
+app.use('/deldonate', DelDonateRoute);
+app.use('/deladmin', DelAdminRoute);
 
 const PORT = process.env.PORT || 3001;
 
