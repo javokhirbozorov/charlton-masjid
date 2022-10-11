@@ -11,6 +11,8 @@ const dbCheck = require('./db/dbCheck');
 const NewsRoute = require('./src/routes/NewsRoute');
 const PostsRoute = require('./src/routes/PostsRoute');
 const EventsRoute = require('./src/routes/EventsRoute');
+const AdmisRoute = require('./src/routes/AdminsRoute');
+const NewEventRoute = require("./src/routes/NewEventRoute");
 
 const app = express();
 
@@ -27,8 +29,10 @@ app.use(cors(corsOptions));
 
 // роутинг
 app.use('/news', NewsRoute);
+app.use('/admins', AdmisRoute);
 app.use('/posts', PostsRoute);
 app.use('/events', EventsRoute);
+app.use('/newevent', NewEventRoute);
 
 const PORT = process.env.PORT || 3001;
 

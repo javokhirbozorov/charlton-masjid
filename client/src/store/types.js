@@ -2,5 +2,6 @@ export const types = {
   DELETE: 'DELETE',
   NEWS: "NEWS",
   EVENTS: "EVENTS",
-  POSTS: "POSTS"
+  POSTS: "POSTS",
+  ADMINS: "ADMINS"
 }

@@ -93,6 +93,9 @@ posts:[
 ],
 events: [
 
+],
+admins: [
+
 ]
 }
 
@@ -107,6 +110,8 @@ export const reducers = (state = initState, action) => {
           return {...state, posts: action.payload};
           case types.EVENTS:
             return {...state, events: action.payload};
+            case types.ADMINS:
+              return {...state, admins: action.payload};
 
       case 'LOAD_DONATIONS':
         const donationData = action.payload;

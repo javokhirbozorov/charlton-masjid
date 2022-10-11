@@ -85,7 +85,7 @@
   position: absolute;
   top: 0;
   right: -110px;
-  background-color: yellow;
+  background-color: red;
   display: flex;
   height: 100%;
   width: 100px;
@@ -100,7 +100,7 @@
   position: absolute;
   top: 0;
   right: -9px;
-  background-color: yellow;
+  background-color: red;
   display: flex;
   height: 100%;
   width: 100px;

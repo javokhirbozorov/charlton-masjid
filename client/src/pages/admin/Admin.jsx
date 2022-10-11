@@ -8,6 +8,7 @@ const adminNav = [
   { id: 2, href: 'news', name: 'News' },
   { id: 3, href: 'donates', name: 'Donates' },
   { id: 4, href: 'posts', name: 'Posts' },
+  { id: 5, href: 'admins', name: 'Admins' },
 ]
 
 
@@ -43,6 +44,7 @@ const Admin = () => {
           }
         </ul>
         <Link to={ `/admin/${ addBtnLink }/newEvent` } className={ styles.adminNav_addBtn }> + </Link>
+        <Link to={ `/admin/admins/newAdmin` } className={ styles.adminNav_addBtn }> NewAdmin </Link>
       </div>  
 
 

@@ -19,6 +19,7 @@ import EventsList from "./pages/admin/EventsList"
 import AddNewEventForm from './pages/admin/AddNewEventForm';
 import AddNewUserForm from './pages/admin/AddNewUserForm';
 import PostList from './pages/admin/PostList';
+import Admins from './pages/admin/Admins';
 
 
 
@@ -31,11 +32,9 @@ function App() {
           <div className='flex justify-center relative'  style={{ padding: '60px 90px'  }}>
 
             <div className="w-1/4 flex">
-              <div className="fixed py-16">
-                <div className="flex justify-center aspect-w-1 aspect-h-1 w-56 h-40 overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8" style={{ padding: '5px' }}>
-                  <p className="mt-1 text-lg font-medium text-gray-900">Prayer time</p>
-                </div>
-              </div>
+              
+                <Prayer />
+              
             </div>
 
             <div className='w-3/4 main'>
@@ -53,9 +52,11 @@ function App() {
                   <Route path='news' element={ <NewsList/> }/>
                   <Route path='donates' element={ <Login/> }/>
                   <Route path='events' element={ <EventsList/> }/>
+                  <Route path='admins' element={<Admins />}/>
                   <Route path='posts' element={ <PostList/> }/>
                   <Route path='events/newEvent' element={ <AddNewEventForm/> }/>
                   <Route path='news/newEvent' element={ <AddNewEventForm/> }/>
+                  <Route path='posts/newEvent' element={ <AddNewEventForm/> }/>
                   <Route path='donates/newEvent' element={ <AddNewEventForm/> }/>
                   <Route path='admins/newAdmin' element={ <AddNewUserForm/> }/>
                 </Route>

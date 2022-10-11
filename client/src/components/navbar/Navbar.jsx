@@ -41,7 +41,7 @@ const solutions = [
   },
   {
     name: 'Donations',
-    href: '/posts',
+    href: '/donations',
     icon: Squares2X2Icon,
   },
   {
