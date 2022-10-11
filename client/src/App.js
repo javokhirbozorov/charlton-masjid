@@ -7,9 +7,11 @@ import { Provider } from 'react-redux';
 import { store } from './store';
 
 
-/*  PAGES & COMPONENTS  */
-import { Home, Events, AboutPage, Signup, Login, Admin } from './pages';
+import { Home, Events, AboutPage, Signup, Login, Donations } from './pages';
 import { Footer, Navbar } from './components';
+import Prayer from './components/Prayer/Prayer';
+import PostsList from './pages/Posts/PostsList';
+import Payment from './pages/payment/Payment';
 
 import NewsList from './pages/admin/NewsList';
 import AddNewEventForm from './pages/admin/AddNewEventForm';
@@ -52,6 +54,9 @@ function App() {
                   <Route path='admins/newAdmin' element={ <AddNewUserForm/> }/>
                 </Route>
                 
+                <Route path='/posts' element={<PostsList />}></Route>
+                <Route path='/donations' element={<Donations />}></Route>
+                <Route path='/payment' element={<Payment/>}/>
               </Routes>
             </div>
 

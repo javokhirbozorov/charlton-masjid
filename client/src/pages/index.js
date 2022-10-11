@@ -5,6 +5,8 @@ import AboutPage from './about/About';
 import Signup from './Auth/Signup';
 import Login from './Auth/Login';
 import Admin from './admin/Admin'
+import Donations from './donations/Donations'
+import Payment from './payment/Payment';
 
 
 export { 
@@ -15,4 +17,6 @@ export {
   Signup, 
   Login,
   Admin
+  Donations,
+  Payment
 };

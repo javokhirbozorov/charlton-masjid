@@ -1,12 +1,21 @@
-import React from 'react'
-import { Events, News } from '../index'
+import React, {useEffect, useState} from 'react'
+import Carousel from '../../components/carousel/Carousel'
+import ThreeNewsList from '../../components/ThreeNewsList/ThreeNewsList'
+import ThreeEventsList from '../../components/ThreeEventsList/ThreeEventsList'
+import "./home.css"
 
 const Home = () => {
-  return (
-    <div>
-      <News/>
-    </div>
-  )
+return(
+  <div>
+  <div>
+    <Carousel />
+  </div>
+  <div className='newsEvents'>
+    <ThreeNewsList />
+    <ThreeEventsList />
+  </div>
+  </div>
+)
 }
 
 export default Home

@@ -67,6 +67,23 @@ const initState = {
       imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-04.jpg',
       imageAlt: 'Hand holding black machined steel mechanical pencil with brass tip and top.',
     }
+  ],
+
+
+  //* In donations will be donation criterias
+  donations:[
+    {
+      title: 'For masjid',
+      body: "For Masjid BOdy Lorem",
+      imgLink: 'https://mdbootstrap.com/img/new/standard/nature/182.jpg',
+      goal: 5000,
+      total: 4000,
+      adminId: 1,
+    }
+  ],
+
+  paymentSummary:[
+
   ]
 }
 
@@ -75,7 +92,20 @@ export const reducers = (state = initState, action) => {
   switch (action.type) {
       case types.DELETE: 
       return;
+
+      case 'LOAD_DONATIONS':
+        const donationData = action.payload;
+
+        return {...state, donations:donationData}
+
+      case 'DONATE_SUM':
+        const imgLink = action.payload.imgLink
+        const title = action.payload.title
+        const donationTotalPercentage = action.payload.donationTotalPercentage
+        const donationAmount = action.payload.donationAmount
+        return {...state, paymentSummary:{imgLink, title, donationTotalPercentage, donationAmount}}
       default:
           return state;
   }
+
 }
