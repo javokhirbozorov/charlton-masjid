@@ -34,6 +34,7 @@ const initState = {
       price: '$35',
       imageSrc: 'https://tailwindui.com/img/ecommerce-images/category-page-04-image-card-04.jpg',
       imageAlt: 'Hand holding black machined steel mechanical pencil with brass tip and top.',
+
     },
     {
       id: 5,
@@ -68,6 +69,10 @@ const initState = {
       imageAlt: 'Hand holding black machined steel mechanical pencil with brass tip and top.',
     }
   ],
+  
+    one: {
+
+  },
 
 
   //* In donations will be donation criterias
@@ -85,6 +90,7 @@ const initState = {
   paymentSummary:[
 
   ]
+
 }
 
 
@@ -92,6 +98,10 @@ export const reducers = (state = initState, action) => {
   switch (action.type) {
       case types.DELETE: 
       return;
+
+      case types.ONE:
+        return {...state, one: action.payload}
+
 
       case 'LOAD_DONATIONS':
         const donationData = action.payload;
@@ -104,6 +114,7 @@ export const reducers = (state = initState, action) => {
         const donationTotalPercentage = action.payload.donationTotalPercentage
         const donationAmount = action.payload.donationAmount
         return {...state, paymentSummary:{imgLink, title, donationTotalPercentage, donationAmount}}
+      
       default:
           return state;
   }

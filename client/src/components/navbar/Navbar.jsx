@@ -35,9 +35,16 @@ const solutions = [
     icon: Squares2X2Icon,
   },
   {
+
     name: 'Donations',
     href: '/donations',
+
     icon: Squares2X2Icon,
+  },
+  {
+        name: 'News',
+    href: '/news',
+       icon: Squares2X2Icon,
   },
 ]
 

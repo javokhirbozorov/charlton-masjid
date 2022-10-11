@@ -5,17 +5,17 @@ import { Routes, Route, BrowserRouter } from 'react-router-dom';
 /*  REDUX  */
 import { Provider } from 'react-redux';
 import { store } from './store';
-
-
-import { Home, Events, AboutPage, Signup, Admin, Login, Donations } from './pages';
+import { Home, Events, AboutPage, Signup, Admin, Signup, News, Login, Donations } from './pages';
 import { Footer, Navbar } from './components';
 import Prayer from './components/Prayer/Prayer';
 import PostsList from './pages/Posts/PostsList';
 import Payment from './pages/payment/Payment';
 
+import DetailsComponent from './pages/DetailsComponent/DetailsComponent';
 import NewsList from './pages/admin/NewsList';
 import AddNewEventForm from './pages/admin/AddNewEventForm';
 import AddNewUserForm from './pages/admin/AddNewUserForm';
+
 
 
 function App() {
@@ -38,7 +38,11 @@ function App() {
               <Routes>
 
                 <Route path='/' element={ <Home/> }></Route>
+                <Route path='/news' element={<News />}></Route>
                 <Route path='/events' element={ <Events/> }></Route>
+                <Route path="/events/:id" element={<DetailsComponent />} />
+                <Route path="/news/:id" element={<DetailsComponent />} />
+                <Route path="/posts/:id" element={<DetailsComponent />} />
                 <Route path='/about' element={ <AboutPage/> }></Route>
                 <Route path='/signup' element={ <Signup/> }></Route>
                 <Route path='/login' element={ <Login/> }></Route>

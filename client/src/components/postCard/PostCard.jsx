@@ -1,7 +1,8 @@
 import React from 'react'
 import './postcard.css'
+import { Link } from 'react-router-dom'
 
-const PostCard = ({post}) => {
+const PostCard = ({post , OnePost}) => {
   return(
     <div key={post.id} className="flex justify-center" id='postcard'>
   <div className="rounded-lg shadow-lg bg-white max-w-sm">
@@ -11,7 +12,9 @@ const PostCard = ({post}) => {
       <p className="text-gray-700 text-base mb-4">
         {post.body}
       </p>
-      <button type="button" className=" inline-block px-6 py-2.5 bg-yellow-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-yellow-700 hover:shadow-lg focus:bg-yellow-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-yellow-800 active:shadow-lg transition duration-150 ease-in-out">Button</button>
+      <Link to={`/posts/${post.id}`}>
+      <button type="button" onClick={() => OnePost(post.id)} className=" inline-block px-6 py-2.5 bg-yellow-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-yellow-700 hover:shadow-lg focus:bg-yellow-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-yellow-800 active:shadow-lg transition duration-150 ease-in-out">Read completely</button>
+      </Link>
     </div>
   </div>
 </div>
