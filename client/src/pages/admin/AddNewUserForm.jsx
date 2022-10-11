@@ -1,7 +1,35 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { LockClosedIcon } from '@heroicons/react/20/solid';
 
 export default function AddNewUserForm() {
+
+  const [email, setEmail] = useState("");
+  const [userName, setUserName] = useState('');
+  const [password, setPassword] = useState("");
+
+  const onEmail = (e) => {
+    setEmail(e.target.value);
+  }
+
+  const onUserName = (e) => {
+    setUserName(e.target.value);
+  }
+
+  const onPassword = (e) => {
+    setPassword(e.target.value);
+  }
+
+  const AdminSubmit = async function (e) {
+        e.preventDefault();
+        const response = await fetch('http://localhost:3001/newadmin', {
+          method: "POST",
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({username: userName, email: email, password: password})
+        })
+        const result = response.json().then((event) => alert(event.info) )
+  }
   return (
         <>
             <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
@@ -12,7 +40,7 @@ export default function AddNewUserForm() {
           New Admin
           </h2>
         </div>
-        <form className="mt-8 space-y-6" action="#" method="POST">
+        <form className="mt-8 space-y-6" type="submit" onSubmit={AdminSubmit}>
           <input type="hidden" name="remember" defaultValue="true" />
           <div className="-space-y-px rounded-md shadow-sm">
           <div>
@@ -21,6 +49,7 @@ export default function AddNewUserForm() {
               </label>
               <input
                 id="userName"
+                onChange={onUserName}
                 name="userName"
                 type="text"
                 required
@@ -34,6 +63,7 @@ export default function AddNewUserForm() {
               </label>
               <input
                 id="email-address"
+                onChange={onEmail}
                 name="email"
                 type="email"
                 autoComplete="email"
@@ -48,6 +78,7 @@ export default function AddNewUserForm() {
               </label>
               <input
                 id="password"
+                onChange={onPassword}
                 name="password"
                 type="password"
                 autoComplete="current-password"

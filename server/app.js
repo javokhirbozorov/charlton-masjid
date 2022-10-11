@@ -15,6 +15,7 @@ const AdmisRoute = require('./src/routes/AdminsRoute');
 const NewEventRoute = require('./src/routes/NewEventRoute');
 const NewPostRoute = require('./src/routes/NewPostRoute');
 const NewNewsRoute = require('./src/routes/NewNewsRoute');
+const NewAdminRoute = require('./src/routes/NewAdminRoute');
 
 const app = express();
 
@@ -37,6 +38,7 @@ app.use('/events', EventsRoute);
 app.use('/newevent', NewEventRoute);
 app.use('/newpost', NewPostRoute);
 app.use('/newnews', NewNewsRoute);
+app.use('/newadmin', NewAdminRoute);
 
 const PORT = process.env.PORT || 3001;
 
