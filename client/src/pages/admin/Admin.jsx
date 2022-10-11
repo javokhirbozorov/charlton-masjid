@@ -7,7 +7,7 @@ const adminNav = [
   { id: 1, href: 'events', name: 'Events' },
   { id: 2, href: 'news', name: 'News' },
   { id: 3, href: 'donates', name: 'Donates' },
-  { id: 4, href: 'admins', name: 'Admins' },
+  { id: 4, href: 'posts', name: 'Posts' },
 ]
 
 
