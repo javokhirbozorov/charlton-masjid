@@ -35,16 +35,23 @@ const solutions = [
     icon: Squares2X2Icon,
   },
   {
-    name: 'News',
-    href: '/news',
+
+    name: 'Donations',
+    href: '/donations',
+
     icon: Squares2X2Icon,
+  },
+  {
+        name: 'News',
+    href: '/news',
+       icon: Squares2X2Icon,
   },
 ]
 
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
+// function classNames(...classes) {
+//   return classes.filter(Boolean).join(' ')
+// }
 
 
 export default function Example() {
@@ -56,13 +63,13 @@ export default function Example() {
             
             {/*  LOGO  */}
             <div className="flex justify-start lg:w-0 lg:flex-1">
-              <a href="#">
+              <Link to="/">
                 <img
                   className="h-20 w-auto"
                   src="https://t3.ftcdn.net/jpg/04/43/17/64/360_F_443176405_A1DXrBsvisTbxNR15g6mndn2DzYKwsXg.jpg"
                   alt=""
                 />
-              </a>
+              </Link>
             </div>  
 
             {/*  BURGER BUTTON  */}
@@ -77,7 +84,7 @@ export default function Example() {
             <Popover.Group as="nav" className="hidden space-x-10 md:flex">
               {
                 solutions.map(el => (
-                  <Link to={ el.href } className="text-base font-medium text-gray-500 hover:text-gray-900">
+                  <Link key={ el.name } to={ el.href } className="text-base font-medium text-gray-500 hover:text-gray-900">
                     { el.name }
                   </Link>
                 ))
