@@ -12,7 +12,9 @@ const NewsRoute = require('./src/routes/NewsRoute');
 const PostsRoute = require('./src/routes/PostsRoute');
 const EventsRoute = require('./src/routes/EventsRoute');
 const AdmisRoute = require('./src/routes/AdminsRoute');
-const NewEventRoute = require("./src/routes/NewEventRoute");
+const NewEventRoute = require('./src/routes/NewEventRoute');
+const NewPostRoute = require('./src/routes/NewPostRoute');
+const NewNewsRoute = require('./src/routes/NewNewsRoute');
 
 const app = express();
 
@@ -33,6 +35,8 @@ app.use('/admins', AdmisRoute);
 app.use('/posts', PostsRoute);
 app.use('/events', EventsRoute);
 app.use('/newevent', NewEventRoute);
+app.use('/newpost', NewPostRoute);
+app.use('/newnews', NewNewsRoute);
 
 const PORT = process.env.PORT || 3001;
 

@@ -43,7 +43,7 @@ const Admin = () => {
             ))
           }
         </ul>
-        <Link to={ `/admin/${ addBtnLink }/newEvent` } className={ styles.adminNav_addBtn }> + </Link>
+        <Link to={ `/admin/${ addBtnLink }/new` } className={ styles.adminNav_addBtn }> + </Link>
         <Link to={ `/admin/admins/newAdmin` } className={ styles.adminNav_addBtn }> NewAdmin </Link>
       </div>  
 

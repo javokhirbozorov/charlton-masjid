@@ -31,7 +31,6 @@ export default function AddNewEventForm() {
           body: JSON.stringify({title: title, body: body, imgLink: img, date: date, adminId: "1" })
         })
         const result = response.json().then((event) => alert(event.info) )
-    
        }
 
   return (

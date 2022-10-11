@@ -2,7 +2,6 @@ import React from 'react'
 import './newscard.css'
 
 const NewsCard = ({news}) => {
-  
   return(
     <div className="flex justify-center" id='newscard'>
       <div className="rounded-lg shadow-lg bg-white">
