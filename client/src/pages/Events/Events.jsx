@@ -1,10 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import { EventCard } from '../../components';
-import { useSelector } from 'react-redux';
-
+import { Allevents } from '../../store/actions';
+import { useDispatch } from 'react-redux';
 
 const Events = () => {
       const [products, setEvents] = useState([])
+      const dispatch  = useDispatch();
 
   useEffect(() => {
     (async () => {
@@ -15,10 +16,10 @@ const Events = () => {
         }
       });
       const data = await res.json()
+      dispatch(Allevents(data))
       setEvents(data)
     })()
-              
-          }, [])
+  }, [])
 
   return (
     <div className="bg-white">

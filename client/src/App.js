@@ -8,15 +8,18 @@ import { store } from './store';
 
 
 /*  PAGES & COMPONENTS  */
-import { Home, Events, AboutPage, Signup, Login } from './pages';
+import { Home, Events, AboutPage, Signup, Login, Donations, Admin, News } from './pages';
 import { Footer, Navbar } from './components';
 import Prayer from './components/Prayer/Prayer';
 import PostsList from './pages/Posts/PostsList';
 import Payment from './pages/payment/Payment';
 
 import NewsList from './pages/admin/NewsList';
+import EventsList from "./pages/admin/EventsList"
 import AddNewEventForm from './pages/admin/AddNewEventForm';
 import AddNewUserForm from './pages/admin/AddNewUserForm';
+import PostList from './pages/admin/PostList';
+
 
 
 function App() {
@@ -42,13 +45,15 @@ function App() {
                 <Route path='/events' element={ <Events/> }></Route>
                 <Route path='/about' element={ <AboutPage/> }></Route>
                 <Route path='/signup' element={ <Signup/> }></Route>
+                <Route path='/news' element={ <News/> }></Route>
+                <Route path='/donations' element={ <Donations/> }></Route>
                 <Route path='/login' element={ <Login/> }></Route>
 
                 <Route path='/admin' element={ <Admin/> }>
                   <Route path='news' element={ <NewsList/> }/>
                   <Route path='donates' element={ <Login/> }/>
-                  <Route path='admins' element={ <NewsList/> }/>
-                  <Route path='events' element={ <NewsList/> }/>
+                  <Route path='events' element={ <EventsList/> }/>
+                  <Route path='posts' element={ <PostList/> }/>
                   <Route path='events/newEvent' element={ <AddNewEventForm/> }/>
                   <Route path='news/newEvent' element={ <AddNewEventForm/> }/>
                   <Route path='donates/newEvent' element={ <AddNewEventForm/> }/>

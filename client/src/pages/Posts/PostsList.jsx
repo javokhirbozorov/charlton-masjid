@@ -1,8 +1,11 @@
 import React, {useState, useEffect} from 'react'
 import PostCard from '../../components/postCard/PostCard'
 import "./postslist.css"
+import { Allposts } from '../../store/actions'
+import { useDispatch } from 'react-redux'
 
 const PostsList = () => {
+  const dispatch = useDispatch();
         
     const [posts, setPosts] = useState([])
 
@@ -15,6 +18,7 @@ const PostsList = () => {
           }
         });
         const data = await res.json()
+        dispatch(Allposts(data))
         setPosts(data)
       })()
                 

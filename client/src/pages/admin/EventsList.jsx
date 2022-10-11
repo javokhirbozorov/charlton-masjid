@@ -1,20 +1,15 @@
 import React from 'react'
-import Item from './Items'
-import styles from './admin.module.css'
 import { useSelector } from 'react-redux'
+import  styles from "./admin.module.css"
+import Item from './Items'
 
-
-
-
-
-const NewsList = () => {
-
-    const news = useSelector((state) => state.news)
+const EventsList = () => {
+    const events = useSelector((state) => state.events)
 
   return (
     <ul className={ styles.navComponent }>
       {
-        news.map(el => (
+        events.map(el => (
           <li key={ el.id } className={ styles.navComponent_item }> 
             <Item elem={ el }/>
           </li>
@@ -24,4 +19,5 @@ const NewsList = () => {
   )
 }
 
-export default NewsList
+
+export default EventsList

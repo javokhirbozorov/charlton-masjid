@@ -84,7 +84,16 @@ const initState = {
 
   paymentSummary:[
 
-  ]
+  ],
+  news:[
+
+  ],
+posts:[
+
+],
+events: [
+
+]
 }
 
 
@@ -92,6 +101,12 @@ export const reducers = (state = initState, action) => {
   switch (action.type) {
       case types.DELETE: 
       return;
+      case types.NEWS:
+        return {...state, news: action.payload};
+        case types.POSTS:
+          return {...state, posts: action.payload};
+          case types.EVENTS:
+            return {...state, events: action.payload};
 
       case 'LOAD_DONATIONS':
         const donationData = action.payload;
