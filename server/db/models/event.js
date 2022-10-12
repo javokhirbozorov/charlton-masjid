@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
     body: DataTypes.TEXT,
     imgLink: DataTypes.TEXT,
     date: DataTypes.DATE,
-    adminId: DataTypes.INTEGER
+    adminId: DataTypes.INTEGER,
   }, {
     sequelize,
     modelName: 'Event',

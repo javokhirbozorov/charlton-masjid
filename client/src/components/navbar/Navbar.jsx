@@ -20,6 +20,11 @@ const solutions = [
     icon: ChartBarIcon,
   },
   {
+    name: 'News',
+    href: '/news',
+    icon: Squares2X2Icon,
+  },
+  {
     name: 'Events',
     href: '/events',
     icon: CursorArrowRaysIcon,
@@ -42,9 +47,11 @@ const solutions = [
     icon: Squares2X2Icon,
   },
   {
-        name: 'News',
-    href: '/news',
-       icon: Squares2X2Icon,
+
+    name: 'Admin',
+    href: '/admin',
+    icon: Squares2X2Icon,
+
   },
 ]
 
@@ -63,7 +70,7 @@ export default function Example() {
             
             {/*  LOGO  */}
             <div className="flex justify-start lg:w-0 lg:flex-1">
-              <Link to="/">
+              <Link href="/">
                 <img
                   className="h-20 w-auto"
                   src="https://t3.ftcdn.net/jpg/04/43/17/64/360_F_443176405_A1DXrBsvisTbxNR15g6mndn2DzYKwsXg.jpg"

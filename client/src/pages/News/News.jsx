@@ -1,12 +1,33 @@
 import React from 'react';
-import { EventCard } from '../../components';
+
+import {  useEffect } from 'react';
+import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import NewsCard from '../../components/NewsCard/NewsCard';
+import { Allnews } from '../../store/actions';
 import { oneCard } from '../../store/actions';
+import { EventCard } from '../../components';
 
 
 const News = () => {
-  const dispatch = useDispatch();
-  const products = useSelector((store) => store.products);
+      const [products, setNews] = useState([]);
+      const dispatch = useDispatch()
+
+      useEffect(() => {
+(async () => {
+  const res = await fetch('http://localhost:3001/news', {
+    method: "GET",
+    headers: {
+      'Content-Type':'application/json'
+    }
+  });
+  const data = await res.json()
+    dispatch(Allnews(data))
+  setNews(data)
+})()
+      }, [])
+    
+
 
   const OneNews = (id) => {
     const one = products.filter((el) => el.id === id);
@@ -22,7 +43,11 @@ const News = () => {
         {
           products.map((product) => (
 
+            <NewsCard news={ product }/>
+
+
             <EventCard product={ product } oneCard={OneNews}/>
+
 
           ))
         }

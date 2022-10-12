@@ -5,7 +5,12 @@ import { Routes, Route, BrowserRouter } from 'react-router-dom';
 /*  REDUX  */
 import { Provider } from 'react-redux';
 import { store } from './store';
-import { Home, Events, AboutPage, Signup, Admin, Signup, News, Login, Donations } from './pages';
+
+
+
+/*  PAGES & COMPONENTS  */
+import { Home, Events, AboutPage, Signup, Login, Donations, Admin, News } from './pages';
+
 import { Footer, Navbar } from './components';
 import Prayer from './components/Prayer/Prayer';
 import PostsList from './pages/Posts/PostsList';
@@ -13,8 +18,16 @@ import Payment from './pages/payment/Payment';
 
 import DetailsComponent from './pages/DetailsComponent/DetailsComponent';
 import NewsList from './pages/admin/NewsList';
+import EventsList from "./pages/admin/EventsList"
 import AddNewEventForm from './pages/admin/AddNewEventForm';
 import AddNewUserForm from './pages/admin/AddNewUserForm';
+import PostList from './pages/admin/PostList';
+import Admins from './pages/admin/Admins';
+import AddNewPostForm from './pages/admin/AddNewPostForm';
+import AddNewNewsForm from './pages/admin/AddNewNewsForm';
+import DonationsList from './pages/admin/DonationsList';
+import AddNewDonationForm from './pages/admin/AddNewDonationForm';
+
 
 
 
@@ -27,11 +40,9 @@ function App() {
           <div className='flex justify-center relative'  style={{ padding: '60px 90px'  }}>
 
             <div className="w-1/4 flex">
-              <div className="fixed py-16">
-                <div className="flex justify-center aspect-w-1 aspect-h-1 w-56 h-40 overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8" style={{ padding: '5px' }}>
-                  <p className="mt-1 text-lg font-medium text-gray-900">Prayer time</p>
-                </div>
-              </div>
+              
+                <Prayer />
+              
             </div>
 
             <div className='w-3/4 main'>
@@ -45,22 +56,24 @@ function App() {
                 <Route path="/posts/:id" element={<DetailsComponent />} />
                 <Route path='/about' element={ <AboutPage/> }></Route>
                 <Route path='/signup' element={ <Signup/> }></Route>
+                <Route path='/news' element={ <News/> }></Route>
+                <Route path='/donations' element={ <Donations/> }></Route>
                 <Route path='/login' element={ <Login/> }></Route>
 
                 <Route path='/admin' element={ <Admin/> }>
                   <Route path='news' element={ <NewsList/> }/>
-                  <Route path='donates' element={ <Login/> }/>
-                  <Route path='admins' element={ <NewsList/> }/>
-                  <Route path='events' element={ <NewsList/> }/>
-                  <Route path='events/newEvent' element={ <AddNewEventForm/> }/>
-                  <Route path='news/newEvent' element={ <AddNewEventForm/> }/>
-                  <Route path='donates/newEvent' element={ <AddNewEventForm/> }/>
+                  <Route path='donates' element={ <DonationsList/> }/>
+                  <Route path='events' element={ <EventsList/> }/>
+                  <Route path='admins' element={<Admins />}/>
+                  <Route path='posts' element={ <PostList/> }/>
+                  <Route path='events/new' element={ <AddNewEventForm/> }/>
+                  <Route path='news/new' element={ <AddNewNewsForm/> }/>
+                  <Route path='posts/new' element={ <AddNewPostForm/> }/>
+                  <Route path='donates/new' element={ <AddNewDonationForm/> }/>
                   <Route path='admins/newAdmin' element={ <AddNewUserForm/> }/>
                 </Route>
                 
                 <Route path='/posts' element={<PostsList />}></Route>
-                <Route path='/donations' element={<Donations />}></Route>
-                <Route path='/payment' element={<Payment/>}/>
               </Routes>
             </div>
 

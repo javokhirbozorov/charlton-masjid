@@ -1,12 +1,43 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 
 export default function AddNewEventForm() {
+      const [date, setDate] = useState('')
+      const [title, setTitle] = useState('')
+      const [body, setBody] = useState('')
+      const [img, setImg] = useState('')
+
+        const OnDate = (e) => {
+          setDate(e.target.value)
+        }
+        const OnTitle = (e) => {
+          setTitle(e.target.value)
+        }
+       const onBody = (e) => {
+        setBody(e.target.value)
+       }
+       const onImg = (e) => {
+        setImg(e.target.value)
+        console.log(img)
+       }
+
+       const EventSubmit = async function (e) {
+        e.preventDefault();
+        const response = await fetch('http://localhost:3001/newevent', {
+          method: "POST",
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({title: title, body: body, imgLink: img, date: date, adminId: "1" })
+        })
+        const result = response.json().then((event) => alert(event.info) )
+       }
+
   return (
     <div style={{ overflow: 'scroll', height: '500px' }}>
          
       <div className="mt-5 md:col-span-2 md:mt-0">
-        <form action="#" method="POST">
+        <form type="submit" onSubmit={EventSubmit}>
           <div className="shadow sm:overflow-hidden sm:rounded-md">
             <div className="space-y-6 bg-white px-4 py-5 sm:p-6">
               <div className="grid grid-cols-3 gap-6">
@@ -15,35 +46,44 @@ export default function AddNewEventForm() {
                     <span className="inline-flex items-center rounded-l-md border border-r-0 border-gray-300 bg-gray-50 px-3 text-sm text-gray-500">
                       Date
                     </span>
-                    <input
-                      type="text"
+                    <input onChange={OnDate}
+                      type="date"
                       name="company-website"
                       id="company-website"
                       className="block w-full flex-1 rounded-none rounded-r-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                      placeholder="06.10.202"
-                      disabled
+                      placeholder="06.10.2022"
                     />
                   </div>
                 </div>
               </div>
 
+              <div classname="mb-3 xl:w-96">
+              <label htmlFor="title" className="block text-sm font-medium text-gray-700">
+                  Title
+                </label>
+
+                  <input
+                      type="text"
+                      onChange={OnTitle}
+                      name="company-website"
+                      id="company-website"
+                      className="block w-full flex-1 rounded-none rounded-r-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                    />
+              </div>
               <div>
                 <label htmlFor="about" className="block text-sm font-medium text-gray-700">
-                  About
+                  Body
                 </label>
                 <div className="mt-1">
                   <textarea
                     id="about"
                     name="about"
+                    onChange={onBody}
                     rows={3}
                     className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
-                    placeholder="you@example.com"
                     defaultValue={''}
                   />
                 </div>
-                <p className="mt-2 text-sm text-gray-500">
-                  Brief description for your profile. URLs are hyperlinked.
-                </p>
               </div>
 
               <div>
@@ -70,7 +110,7 @@ export default function AddNewEventForm() {
                         className="relative cursor-pointer rounded-md bg-white font-medium text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 hover:text-indigo-500"
                       >
                         <span>Upload a file</span>
-                        <input id="file-upload" name="file-upload" type="file" className="sr-only" />
+                        <input id="file-upload" name="file-upload" type="file" className="sr-only" onChange={onImg} />
                       </label>
                       <p className="pl-1">or drag and drop</p>
                     </div>

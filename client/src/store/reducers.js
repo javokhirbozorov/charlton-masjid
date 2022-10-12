@@ -77,20 +77,25 @@ const initState = {
 
   //* In donations will be donation criterias
   donations:[
-    {
-      title: 'For masjid',
-      body: "For Masjid BOdy Lorem",
-      imgLink: 'https://mdbootstrap.com/img/new/standard/nature/182.jpg',
-      goal: 5000,
-      total: 4000,
-      adminId: 1,
-    }
+
   ],
 
   paymentSummary:[
 
-  ]
 
+  ],
+  news:[
+
+  ],
+posts:[
+
+],
+events: [
+
+],
+admins: [
+
+],
 }
 
 
@@ -98,6 +103,14 @@ export const reducers = (state = initState, action) => {
   switch (action.type) {
       case types.DELETE: 
       return;
+      case types.NEWS:
+        return {...state, news: action.payload};
+        case types.POSTS:
+          return {...state, posts: action.payload};
+          case types.EVENTS:
+            return {...state, events: action.payload};
+            case types.ADMINS:
+              return {...state, admins: action.payload};
 
       case types.ONE:
         return {...state, one: action.payload}

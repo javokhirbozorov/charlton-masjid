@@ -1,36 +1,32 @@
 import React, {useEffect} from 'react'
-import NewsItem from './NewsItem'
-import styles from './admin.module.css'
 import { useSelector, useDispatch } from 'react-redux'
-import { Allnews } from '../../store/actions'
+import PostItem from './PostItem'
+import styles from "./admin.module.css"
+import { Allposts } from '../../store/actions'
 
-
-
-
-
-const NewsList = () => {
-    const dispatch = useDispatch();
-    const news = useSelector((state) => state.news)
+const PostList = () => {
+  const dispatch = useDispatch();
+    const posts = useSelector((state) => state.posts)
 
     useEffect(() => {
       (async () => {
-        const res = await fetch('http://localhost:3001/news', {
+        const res = await fetch('http://localhost:3001/posts', {
           method: "GET",
           headers: {
             'Content-Type':'application/json'
           }
         });
         const data = await res.json()
-          dispatch(Allnews(data))
-      })()
+        dispatch(Allposts(data))
+      })()   
             }, [])
 
   return (
     <ul className={ styles.navComponent }>
       {
-        news.map(el => (
+        posts.map(el => (
           <li key={ el.id } className={ styles.navComponent_item }> 
-            <NewsItem elem={ el }/>
+            <PostItem elem={ el }/>
           </li>
         ))
       }
@@ -38,4 +34,4 @@ const NewsList = () => {
   )
 }
 
-export default NewsList
+export default PostList
