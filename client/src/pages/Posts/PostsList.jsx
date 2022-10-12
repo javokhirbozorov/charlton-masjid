@@ -29,7 +29,7 @@ const PostsList = () => {
                 
             }, [])
     const OnePost = (id) => {
-          const one = allposts.filter((el) => el.id === id);
+          const one = posts.filter((el) => el.id === id);
           console.log(one)
           dispatch(oneCard(one[0]))
     }

@@ -43,7 +43,7 @@ const News = () => {
         {
           products.map((product) => (
 
-            <NewsCard news={ product }/>
+          //  <NewsCard news={ product }/>
 
 
             <EventCard product={ product } oneCard={OneNews}/>

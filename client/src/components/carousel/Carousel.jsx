@@ -29,21 +29,21 @@ const Carousel = () => {
   <div className="carousel-inner relative w-full overflow-hidden">
     <div className="carousel-item active float-left w-full">
       <img
-        src="https://mdbcdn.b-cdn.net/img/new/slides/041.webp"
+        src="https://islam.ru/sites/default/files/img/2017/analitics/musulmanin_0.jpg"
         className="block max-h-96  w-full"
         alt="Wild Landscape"
       />
     </div>
     <div className="carousel-item float-left w-full">
       <img
-        src="https://mdbcdn.b-cdn.net/img/new/slides/042.webp"
+        src="https://avatars.dzeninfra.ru/get-zen_doc/1654267/pub_5caf5671db481700b3e2c242_5caf57b44ef90600b4910569/scale_1200"
         className="block max-h-96  w-full"
         alt="Camera"
       />
     </div>
     <div className="carousel-item float-left w-full">
       <img
-        src="https://mdbcdn.b-cdn.net/img/new/slides/043.webp"
+        src="https://wallup.net/wp-content/uploads/2017/11/17/227388-books-Islam-Quran.jpg"
         className="block max-h-96  w-full"
         alt="Exotic Fruits"
       />

@@ -4,7 +4,7 @@ import "./threenewslist.css"
 import { Link } from 'react-router-dom';
 
 const ThreeNewsList = () => {
-    const products = useSelector((store) => store.products);
+    const products = useSelector((store) => store.news);
         
   return (
     <div  className='news text-center'>
@@ -15,8 +15,8 @@ const ThreeNewsList = () => {
             {products.map((el, index) => 
             index < 3 ?
 <div class='contmeleft' key={el.id}>
-<img width='140px' src={el.imageSrc} />
-<p>{el.name}</p>
+<img width='140px' src={el.imgLink} />
+<p>{el.title}</p>
 </div>
    : "" )}
   

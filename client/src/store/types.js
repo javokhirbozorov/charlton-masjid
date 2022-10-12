@@ -4,8 +4,7 @@ export const types = {
   NEWS: "NEWS",
   EVENTS: "EVENTS",
   POSTS: "POSTS",
-  ADMINS: "ADMINS"
-
+  ADMINS: "ADMINS",
   ONE: "ONE",
 
 }

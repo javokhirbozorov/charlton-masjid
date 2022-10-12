@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 const ThreeEventsList = () => {
-    const products = useSelector((store) => store.products);
+    const products = useSelector((store) => store.events);
   return (
     <div  className='events text-center'>
     <div>Events</div>
@@ -13,8 +13,8 @@ const ThreeEventsList = () => {
         {products.map((el, index) => 
         index < 3 ?
 <div class='contmeleft' key={el.id}>
-<img width='140px' src={el.imageSrc} />
-<p>{el.name}</p>
+<img width='140px' src={el.imgLink} />
+<p>{el.title}</p>
 </div>
 : "" )}
 
