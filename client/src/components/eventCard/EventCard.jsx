@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
-const EventCard = ( { product } ) => {
+const EventCard = ( { product, oneCard} ) => {
   return (
-    <div>
-      <a key={product.id} href={product.href} className="group">
+    <div key={product.id} >
+    
         <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8">
           <p className="mt-1 text-lg font-medium text-gray-900">{product.title}</p>
             <img
@@ -12,12 +13,18 @@ const EventCard = ( { product } ) => {
               className="h-full w-full object-cover object-center group-hover:opacity-75"
             />
         </div>
+
           <h3 className="mt-4 text-sm text-gray-700">{product.title}</h3>
           <p className="mt-1 text-lg font-medium text-gray-900">{product.body}</p>
-      </a>
-      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-        Button
+      
+
+
+    <Link to={`/events/${product.id}`}>
+      <button onClick={() => oneCard(product.id)} class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+      Read completely
+
       </button>
+    </Link>
     </div>
   );
 }

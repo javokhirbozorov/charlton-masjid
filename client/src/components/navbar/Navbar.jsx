@@ -40,14 +40,18 @@ const solutions = [
     icon: Squares2X2Icon,
   },
   {
+
     name: 'Donations',
     href: '/donations',
+
     icon: Squares2X2Icon,
   },
   {
+
     name: 'Admin',
     href: '/admin',
     icon: Squares2X2Icon,
+
   },
 ]
 
