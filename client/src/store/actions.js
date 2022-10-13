@@ -59,7 +59,6 @@ export const loginThunk = ( { email, password }, navigate) => {
   };
 }
 
-
 export const logOutThunk = (navigate) => {
 
 };
