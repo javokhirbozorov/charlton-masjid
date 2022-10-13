@@ -9,7 +9,12 @@ const login = async (req, res) => {
     if (admin) {
       const passCheck = await bcrypt.compare(password, admin.password);
       if (passCheck) {
-        res.json({ logIn: 'Done' });
+        req.session.user = admin.username;
+        req.session.user_id = admin.id;
+        req.session.email = admin.email;
+        req.session.save(() => {
+          res.json({ logIn: 'Done', username: admin.username, email: admin.email });
+        });
       } else {
         res.json({ error: 'Invalid password' });
       }
@@ -31,8 +36,13 @@ const signUp = async (req, res) => {
         res.json({ emailExists: 'This mail is already in use' });
       } else {
         const hash = await bcrypt.hash(password, 10);
-        await Admin.create({ email, username, password: hash });
-        res.json({ message: 'Admin created' });
+        const admin = await Admin.create({ email, username, password: hash });
+        req.session.user = admin.username;
+        req.session.user_id = admin.id;
+        req.session.email = admin.email;
+        req.session.save(() => {
+          res.json({ message: 'Admin created', username: admin.username, email: admin.email });
+        });
       }
     } catch (err) {
       console.log(err);
@@ -40,4 +50,12 @@ const signUp = async (req, res) => {
   }
 };
 
-module.exports = { signUp, login };
+const checkAdmin = async (req, res) => {
+  if (req.session.user) {
+    res.json({ admin: 'Done', username: req.session.user, email: req.session.email });
+  } else {
+    res.json({ dontAdmin: 'Not done' });
+  }
+};
+
+module.exports = { signUp, login, checkAdmin };

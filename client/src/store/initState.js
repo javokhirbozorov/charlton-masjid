@@ -66,7 +66,7 @@ export const initState = {
     }
   ],
   admin: {
-    username: '',
-    email: '',
+    username: 'username',
+    email: 'email',
   }
 }

@@ -1,9 +1,12 @@
 import React from 'react'
 import PostsList from '../Posts/PostsList'
 
-const Home = () => {
+const Home = ({isAdmin}) => {
+
 return(
-  <PostsList />
+  <>
+  <p>{isAdmin.username}</p><PostsList />
+  </>
 )
 }
 

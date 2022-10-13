@@ -8,6 +8,7 @@ export const signUpThunk = ( { email, username, password }, navigate) => {
         const obj = { email, username, password };
         const response = await fetch('http://localhost:3001/api/signup', {
           method: 'POST',
+          credentials: 'include',
           headers: {
             'Content-Type': 'application/json',
           },
@@ -15,7 +16,7 @@ export const signUpThunk = ( { email, username, password }, navigate) => {
         });
         const data = await response.json();
         if (data.message) {
-          dispatch(addAdmin({ username, email }));
+          dispatch(addAdmin({ username: data.username, email: data.email }));
           navigate('/');
         }
         if (data.emailExists) {
@@ -34,6 +35,7 @@ export const loginThunk = ( { email, password }, navigate) => {
       const obj = { email, password };
       const response = await fetch('http://localhost:3001/api/login', {
         method: 'POST',
+        credentials: 'include',
         headers: {
           'Content-Type': 'application/json',
         },
@@ -41,7 +43,7 @@ export const loginThunk = ( { email, password }, navigate) => {
       });
       const data = await response.json();
       if (data.logIn) {
-        dispatch(addAdmin({ email }));
+        dispatch(addAdmin({ username: data.username, email: data.email }));
         navigate('/');
       }
       if (data.error) {
@@ -56,3 +58,24 @@ export const loginThunk = ( { email, password }, navigate) => {
     
   };
 }
+
+export const logOutThunk = (navigate) => {
+  
+};
+
+export const checkAdminThunk = () => {
+  return async (dispatch) => {
+    try {
+      const response = await fetch('http://localhost:3001/api/checkAdmin', {
+        method: 'GET',
+        credentials: 'include',
+      });
+      const data = await response.json();
+      if (data.admin) {
+        dispatch(addAdmin({ username: data.username, email: data.email }));
+      }
+    } catch (err) {
+      console.log('=========>>>>', err);
+    }
+  };
+};

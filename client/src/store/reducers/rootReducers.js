@@ -5,4 +5,4 @@ import { adminReducer } from './adminReducer'
 export const rootReducer = combineReducers({
   post: postReducer,
   admin: adminReducer
-})
+});
