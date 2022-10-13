@@ -4,7 +4,8 @@ import ThreeNewsList from '../../components/ThreeNewsList/ThreeNewsList'
 import ThreeEventsList from '../../components/ThreeEventsList/ThreeEventsList'
 import "./home.css"
 
-const Home = () => {
+const Home = ({isAdmin}) => {
+
 return(
   <div>
     <h1 className='text-center text-4xl mb-16' >Charlton Masjid Trust</h1>

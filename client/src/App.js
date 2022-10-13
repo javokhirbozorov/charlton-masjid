@@ -1,11 +1,9 @@
-import React from 'react';
-import { Routes, Route, BrowserRouter } from 'react-router-dom';
-
+import React, { useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 /*  REDUX  */
-import { Provider } from 'react-redux';
-import { store } from './store';
-
+import { useDispatch } from 'react-redux';
 
 
 /*  PAGES & COMPONENTS  */
@@ -13,6 +11,7 @@ import { Home, Events, AboutPage, Signup, Login, Donations, Admin, News } from '
 
 import { Footer, Navbar } from './components';
 import Prayer from './components/Prayer/Prayer';
+
 import PostsList from './pages/Posts/PostsList';
 import Payment from './pages/payment/Payment';
 
@@ -31,14 +30,19 @@ import AddNewDonationForm from './pages/admin/AddNewDonationForm';
 
 
 
+import { checkAdminThunk } from './store/actions';
+
+
 function App() {
+
+  const dispatch = useDispatch();
+  const admin = useSelector((state) => state.admin);
+
+  useEffect(() => {
+    dispatch(checkAdminThunk());
+    console.log('App.js useEffect');
+  }, []);
   return (
-    <BrowserRouter>
-      <Provider store={store}>
-          <Navbar/>
-
-
-
             <div className='main'>
           <div className='flex justify-center relative'  style={{ padding: '60px 90px'  }}>
             <div className="w-1/4 flex">
@@ -50,7 +54,7 @@ function App() {
 
               <Routes>
 
-                <Route path='/' element={ <Home/> }></Route>
+                <Route path='/' element={ <Home isAdmin={admin}/> }></Route>
                 <Route path='/news' element={<News />}></Route>
                 <Route path='/events' element={ <Events/> }></Route>
                 <Route path="/events/:id" element={<DetailsComponent />} />
@@ -81,14 +85,14 @@ function App() {
             </div>
             </div>
 
+            <Footer />
           </div>
-
-          <Footer />
-      </Provider>
-    
-    </BrowserRouter>
   );
 }
 
+   
+      
 
+
+ 
 export default App;

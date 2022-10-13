@@ -1,7 +1,6 @@
-import { types } from './types';
+import { types } from '../types';
 
-
-const initState = {
+export const initState = {
   products: [
     {
       id: 1,
@@ -77,25 +76,29 @@ const initState = {
 
   //* In donations will be donation criterias
   donations:[
-
+    
   ],
-
+  
   paymentSummary:[
-
-
+    
+    
   ],
   news:[
-
+    
   ],
-posts:[
-
-],
-events: [
-
-],
-admins: [
-
-],
+  posts:[
+    
+  ],
+  events: [
+    
+  ],
+  admins: [
+    
+  ],
+  admin: {
+    username: 'username',
+    email: 'email',
+  }
 }
 
 
@@ -130,6 +133,6 @@ export const reducers = (state = initState, action) => {
       
       default:
           return state;
-  }
 
+  }
 }
