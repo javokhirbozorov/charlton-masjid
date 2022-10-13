@@ -4,7 +4,7 @@ const AddNewDonationForm = () => {
             
     const [title, setTitle] = useState('')
     const [body, setBody] = useState('')
-    const [img, setImg] = useState('')
+    const [img, setImg] = useState('https://yt3.ggpht.com/a/AATXAJyHKmL3llITwVy2v9gWP5Mr_fFKV8o0RnLYgtr3=s900-c-k-c0xffffffff-no-rj-mo')
     const [goal, setGoal] = useState(0);
     const [total, setTotal] = useState(0);
 
@@ -99,38 +99,20 @@ const AddNewDonationForm = () => {
                         />
                   </div>
     
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700">Cover photo</label>
-                    <div className="mt-1 flex justify-center rounded-md border-2 border-dashed border-gray-300 px-6 pt-5 pb-6">
-                      <div className="space-y-1 text-center">
-                        <svg
-                          className="mx-auto h-12 w-12 text-gray-400"
-                          stroke="currentColor"
-                          fill="none"
-                          viewBox="0 0 48 48"
-                          aria-hidden="true"
-                        >
-                          <path
-                            d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
-                            strokeWidth={2}
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                        <div className="flex text-sm text-gray-600">
-                          <label
-                            htmlFor="file-upload"
-                            className="relative cursor-pointer rounded-md bg-white font-medium text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 hover:text-indigo-500"
-                          >
-                            <span>Upload a file</span>
-                            <input id="file-upload" name="file-upload" type="file" className="sr-only" onChange={onImg} />
-                          </label>
-                          <p className="pl-1">or drag and drop</p>
-                        </div>
-                        <p className="text-xs text-gray-500">PNG, JPG, GIF up to 10MB</p>
-                      </div>
-                    </div>
-                  </div>
+                  <div classname="mb-3 xl:w-96">
+              <label htmlFor="title" className="block text-sm font-medium text-gray-700">
+                  Cover photo
+                </label>
+
+                  <input
+                      type="text"
+                      onChange={onImg}
+                      name="company-website"
+                      id="company-website"
+                      className="block w-full flex-1 rounded-none rounded-r-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                      placeholder='Get url photo'
+                    />
+              </div>
                 </div>
                 <div className="bg-gray-50 px-4 py-3 text-right sm:px-6">
                   <button

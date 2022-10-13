@@ -29,7 +29,7 @@ const Carousel = () => {
   <div className="carousel-inner relative w-full overflow-hidden">
     <div className="carousel-item active float-left w-full">
       <img
-        src="https://islam.ru/sites/default/files/img/2017/analitics/musulmanin_0.jpg"
+        src="https://islam.ru/sites/default/files/img/2017/obshestvo/6361154207434358392124375070_mosque.jpg"
         className="block max-h-96  w-full"
         alt="Wild Landscape"
       />

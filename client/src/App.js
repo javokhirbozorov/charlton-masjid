@@ -37,15 +37,17 @@ function App() {
       <Provider store={store}>
           <Navbar/>
 
-          <div className='flex justify-center relative'  style={{ padding: '60px 90px'  }}>
 
+
+            <div className='main'>
+          <div className='flex justify-center relative'  style={{ padding: '60px 90px'  }}>
             <div className="w-1/4 flex">
               
                 <Prayer />
               
             </div>
+            <div className='w-3/4'>
 
-            <div className='w-3/4 main'>
               <Routes>
 
                 <Route path='/' element={ <Home/> }></Route>
@@ -75,6 +77,7 @@ function App() {
                 
                 <Route path='/posts' element={<PostsList />}></Route>
               </Routes>
+            </div>
             </div>
 
           </div>

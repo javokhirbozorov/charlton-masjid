@@ -4,7 +4,7 @@ import "./threenewslist.css"
 import { Link } from 'react-router-dom';
 
 const ThreeNewsList = () => {
-    const products = useSelector((store) => store.news);
+  const products = [{id: 1, imgLink: "https://newvz.ru/wp-content/uploads/2018/11/london.jpg", title:"Title"}, {id:2, imgLink: 'https://phonoteka.org/uploads/posts/2021-05/1621774166_23-phonoteka_org-p-fon-religiya-islam-24.jpg', title: "Event"}, {id: 3, imgLink: 'https://m.media-amazon.com/images/M/MV5BNWZiYzE0NzAtNGEyZS00ZjAwLTkzNWYtYTA3NWFhOGE2OTBjXkEyXkFqcGdeQXVyNTU4NjY5MzM@._V1_.jpg', title: "Happy Day!"}]
         
   return (
     <div  className='news text-center'>
