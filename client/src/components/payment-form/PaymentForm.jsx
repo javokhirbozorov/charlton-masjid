@@ -1,34 +1,38 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-
+import { useNavigate } from 'react-router-dom'
 
 
 const PaymentForm = () => {
+    const navigate = useNavigate();
+    const donation = useSelector((store)=>store.paymentSummary)
 
-const donationAmount = useSelector((store)=>store.paymentSummary.donationAmount)
-    const paymentSubmitHandler = async(event)=>{
-        event.preventDefault()
-        try{
-            const response = await fetch('http://localhost:3001/donations/makePayment', {
-                method:"GET",
-                headers:{
-                    'Content-Type':'application/json',
-                },
-               
-            })
-
-            if(response.status ===200){
-                alert('Payment was Successful')
-            }else{
-                alert('Payment Failed')
-            }
-
-        }catch(err){
-            alert(err)
-                console.log(err)}
+const paymentSubmitHandler = async(event)=>{
        
+    try{
+        event.preventDefault()
+        const response = await fetch('http://localhost:3001/donations/makePayment', {
+            method:"POST",
+            headers:{
+                'Content-Type':'application/json',
+            },
+            body:JSON.stringify({donationAmount:donation.donationAmount, donationId:donation.donationId} )
 
+        })
+
+        if(response.status ===200){
+
+            alert('Payment was Successful')
+            navigate('/donations')
+        }else{
+            alert('Payment Failed')
+        }
+
+    }catch(err){
+        alert(err)
+            console.log(err)}
     }
+    
     return (
         <div className='border-solid border-2 w-96 ' >
             Payment Form
@@ -41,7 +45,7 @@ const donationAmount = useSelector((store)=>store.paymentSummary.donationAmount)
 
             <div className="mt-10 sm:mt-0"> 
                 <div className="mt-5 md:col-span-2 md:mt-0">
-                    <form onSubmit={paymentSubmitHandler} action="http://localhost:3001/donations/makePayment" method="POST">
+                    <form onSubmit={paymentSubmitHandler}>
                         <div className="overflow-hidden shadow sm:rounded-md">
                             <div className="bg-white px-4 py-5 sm:p-6">
                                 <div className="grid grid-cols-6 gap-6">
