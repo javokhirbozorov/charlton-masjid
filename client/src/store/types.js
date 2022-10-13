@@ -7,4 +7,5 @@ export const types = {
   ADMINS: "ADMINS",
   ONE: "ONE",
 
+  ADD_ADMIN: 'ADD_ADMIN',
 }
