@@ -10,7 +10,7 @@ import { Allnews } from '../../store/actions'
 
 const NewsList = () => {
     const dispatch = useDispatch();
-    const news = useSelector((state) => state.news)
+    const news = useSelector((state) => state.post.news)
 
     useEffect(() => {
       (async () => {

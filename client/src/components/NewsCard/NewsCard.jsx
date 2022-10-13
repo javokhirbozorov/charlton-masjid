@@ -18,7 +18,7 @@ const NewsCard = ({news, oneCard}) => {
           <p className="mt-1 text-lg font-medium text-green-900" id='clip'>{news.body}</p>
 
          <Link to={`/news/${news.id}`}>
-      <button onClick={() => oneCard(news.id)} class="bg-yellow-500 hover:bg-yellow-700 text-green font-bold py-2 px-4 rounded-full">
+      <button onClick={() => oneCard(news.id)} className="bg-yellow-500 hover:bg-yellow-700 text-green font-bold py-2 px-4 rounded-full">
       Read completely
 
       </button>

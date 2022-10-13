@@ -13,55 +13,88 @@ import {
 } from '@heroicons/react/24/outline'
 
 
-const solutions = [
-  {
-    name: 'Home',
-    href: '/',
-    icon: ChartBarIcon,
-  },
-  {
-    name: 'News',
-    href: '/news',
-    icon: Squares2X2Icon,
-  },
-  {
-    name: 'Events',
-    href: '/events',
-    icon: CursorArrowRaysIcon,
-  },
-  {
-    name: 'About',
-    href: '/about',
-    icon: Squares2X2Icon,
-  },
-  {
-    name: 'Posts',
-    href: '/posts',
-    icon: Squares2X2Icon,
-  },
-  {
-
-    name: 'Donations',
-    href: '/donations',
-
-    icon: Squares2X2Icon,
-  },
-  {
-
-    name: 'Admin',
-    href: '/admin',
-    icon: Squares2X2Icon,
-
-  },
-]
 
 
 // function classNames(...classes) {
-//   return classes.filter(Boolean).join(' ')
-// }
-
-
-export default function Example() {
+  //   return classes.filter(Boolean).join(' ')
+  // }
+  
+  
+  export default function Example({isAdmin}) {
+  const solutions = isAdmin.username ? [
+    {
+      name: 'Home',
+      href: '/',
+      icon: ChartBarIcon,
+    },
+    {
+      name: 'News',
+      href: '/news',
+      icon: Squares2X2Icon,
+    },
+    {
+      name: 'Events',
+      href: '/events',
+      icon: CursorArrowRaysIcon,
+    },
+    {
+      name: 'About',
+      href: '/about',
+      icon: Squares2X2Icon,
+    },
+    {
+      name: 'Posts',
+      href: '/posts',
+      icon: Squares2X2Icon,
+    },
+    {
+  
+      name: 'Donations',
+      href: '/donations',
+  
+      icon: Squares2X2Icon,
+    },
+    {
+  
+      name: 'Admin',
+      href: '/admin',
+      icon: Squares2X2Icon,
+  
+    },
+  ] : [
+    {
+      name: 'Home',
+      href: '/',
+      icon: ChartBarIcon,
+    },
+    {
+      name: 'News',
+      href: '/news',
+      icon: Squares2X2Icon,
+    },
+    {
+      name: 'Events',
+      href: '/events',
+      icon: CursorArrowRaysIcon,
+    },
+    {
+      name: 'About',
+      href: '/about',
+      icon: Squares2X2Icon,
+    },
+    {
+      name: 'Posts',
+      href: '/posts',
+      icon: Squares2X2Icon,
+    },
+    {
+  
+      name: 'Donations',
+      href: '/donations',
+  
+      icon: Squares2X2Icon,
+    },
+  ]
   return (
     <>
       <Popover className="fixed w-full bg-white z-50 navbar">
@@ -98,7 +131,13 @@ export default function Example() {
               }
             </Popover.Group>
 
-
+                {isAdmin.username ?              
+                
+                <Link to='/logout' className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700">
+             
+             Logout
+          
+           </Link> :
             <div className="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
               <Link to='/signup' className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">
              
@@ -112,6 +151,7 @@ export default function Example() {
              
               </Link>
             </div>
+            }
 
           </div>
         </div>
@@ -160,13 +200,16 @@ export default function Example() {
                   </nav>
                 </div>
               </div>
-              <div className="space-y-6 py-6 px-5">
+                 
            
+                  
+              <div className="space-y-6 py-6 px-5">
                 <div>
-                  <Link
+                    
+                    <Link
                     to='/login'
                     className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
-                  >
+                    >
                     Login
                   </Link>
                   <p className="mt-6 text-center text-base font-medium text-gray-500">
@@ -174,11 +217,12 @@ export default function Example() {
                     <Link 
                       to='/signup' 
                       className="text-indigo-600 hover:text-indigo-500"
-                    >
+                      >
                       Sign up
                     </Link>
                   </p>
                 </div>
+              
               </div>
             </div>
           </Popover.Panel>

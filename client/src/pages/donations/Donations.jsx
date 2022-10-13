@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux'
 
 
 const Donations = () => {
-  const donationList = useSelector((store) => store.donations);
+  const donationList = useSelector((store) => store.post.donations);
 
   const dispatch = useDispatch();
   React.useEffect(() => {
@@ -38,7 +38,7 @@ const Donations = () => {
 
         {
           donationList.map((donation) => (
-            <DonateCard id={donation.id} key={donation.id} donation={donation} />
+            <DonateCard donation={donation} />
 
 
           ))

@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 
 const PaymentForm = () => {
     const navigate = useNavigate();
-    const donation = useSelector((store)=>store.paymentSummary)
+    const donation = useSelector((store)=>store.post.paymentSummary)
 
 const paymentSubmitHandler = async(event)=>{
        
@@ -16,7 +16,7 @@ const paymentSubmitHandler = async(event)=>{
             headers:{
                 'Content-Type':'application/json',
             },
-            body:JSON.stringify({donationAmount:donation.donationAmount, donationId:donation.donationId} )
+            body:JSON.stringify({donationAmount:donation.donationAmount, donationId:donation.id} )
 
         })
 

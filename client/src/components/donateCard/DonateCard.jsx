@@ -27,7 +27,8 @@ const[donationAmount, setDonationAmount] = useState(0)
 if(donationAmount >= 3){
   const imgLink = donation.imgLink;
   const title = donation.title
-  dispatch({type:'DONATE_SUM', payload:{imgLink,title,donationTotalPercentage, donationAmount}})
+  const id = donation.id
+  dispatch({type:'DONATE_SUM', payload:{imgLink,title,donationTotalPercentage,id,donationAmount}})
 } else{
   alert('The minimum amount is £3')
 }

@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import "./detailscomponent.css"
 
 const DetailsComponent = () => {
-    const element = useSelector((store) => store.one)
+    const element = useSelector((store) => store.post.one)
   return (
     <div className='elem'>
         <img src={element.imageSrc || element.imgLink} class="max-w-full h-auto" alt="..." />

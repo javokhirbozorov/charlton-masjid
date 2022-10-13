@@ -5,7 +5,7 @@ import DonationsItem from './DonationsItem'
 
 const DonationsList = () => {
     const dispatch = useDispatch();
-    const donations = useSelector((state) => state.donations);
+    const donations = useSelector((state) => state.post.donations);
 
     useEffect(() => {
         (async () => {

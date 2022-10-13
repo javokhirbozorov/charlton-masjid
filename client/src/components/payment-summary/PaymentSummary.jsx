@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { store } from '../../store'
 
 const PaymentSummary = () => {
-    const summary = useSelector((store)=> store.paymentSummary)
+    const summary = useSelector((store)=> store.post.paymentSummary)
     return (
         <div className='border-solid border-2 p-3'>
             <h1>Payment Summary</h1>

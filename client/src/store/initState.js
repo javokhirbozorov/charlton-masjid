@@ -1,4 +1,4 @@
-import { types } from '../types';
+import { types } from './types';
 
 export const initState = {
   products: [
@@ -96,8 +96,7 @@ export const initState = {
     
   ],
   admin: {
-    username: 'username',
-    email: 'email',
+
   }
 }
 
@@ -127,9 +126,10 @@ export const reducers = (state = initState, action) => {
       case 'DONATE_SUM':
         const imgLink = action.payload.imgLink
         const title = action.payload.title
+        const id = action.payload.id;
         const donationTotalPercentage = action.payload.donationTotalPercentage
         const donationAmount = action.payload.donationAmount
-        return {...state, paymentSummary:{imgLink, title, donationTotalPercentage, donationAmount}}
+        return {...state, paymentSummary:{imgLink, title, id,  donationTotalPercentage, donationAmount}}
       
       default:
           return state;

@@ -46,6 +46,18 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
+const sessionConfig = {
+  name: 'Session',
+  store: new FileStore(),
+  secret: SESSION_SECRET ?? '123',
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    maxAge: 1000 * 60 * 60 * 24 * 10,
+    httpOnly: true,
+  },
+};
+app.use(session(sessionConfig));
 
 // роутинг
 app.use('/api', authRouter);
@@ -66,18 +78,6 @@ app.use('/deldonate', DelDonateRoute);
 app.use('/deladmin', DelAdminRoute);
 
 const PORT = process.env.PORT || 3001;
-const sessionConfig = {
-  name: 'Session',
-  store: new FileStore(),
-  secret: SESSION_SECRET ?? '123',
-  resave: false,
-  saveUninitialized: false,
-  cookie: {
-    maxAge: 1000 * 60 * 60 * 24 * 10,
-    httpOnly: true,
-  },
-};
-app.use(session(sessionConfig));
 
 app.listen(PORT, async () => {
   try {

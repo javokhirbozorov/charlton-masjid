@@ -6,7 +6,7 @@ import { Allevents } from '../../store/actions'
 
 const EventsList = () => {
   const dispatch = useDispatch()
-    const events = useSelector((state) => state.events)
+    const events = useSelector((state) => state.post.events)
 
  useEffect(() => {
     (async () => {

@@ -43,6 +43,8 @@ function App() {
     console.log('App.js useEffect');
   }, []);
   return (
+    <>
+    <Navbar isAdmin={admin}/>
             <div className='main'>
           <div className='flex justify-center relative'  style={{ padding: '60px 90px'  }}>
             <div className="w-1/4 flex">
@@ -87,6 +89,7 @@ function App() {
 
             <Footer />
           </div>
+    </>
   );
 }
 

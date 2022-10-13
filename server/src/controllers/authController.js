@@ -1,5 +1,4 @@
 const bcrypt = require('bcrypt');
-
 const { Admin } = require('../../db/models');
 
 const login = async (req, res) => {
@@ -37,6 +36,7 @@ const signUp = async (req, res) => {
       } else {
         const hash = await bcrypt.hash(password, 10);
         const admin = await Admin.create({ email, username, password: hash });
+        console.log(admin);
         req.session.user = admin.username;
         req.session.user_id = admin.id;
         req.session.email = admin.email;
@@ -51,7 +51,7 @@ const signUp = async (req, res) => {
 };
 
 const checkAdmin = async (req, res) => {
-  if (req.session.user) {
+  if (req.session) {
     res.json({ admin: 'Done', username: req.session.user, email: req.session.email });
   } else {
     res.json({ dontAdmin: 'Not done' });

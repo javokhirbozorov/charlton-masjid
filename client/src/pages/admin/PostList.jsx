@@ -6,7 +6,7 @@ import { Allposts } from '../../store/actions'
 
 const PostList = () => {
   const dispatch = useDispatch();
-    const posts = useSelector((state) => state.posts)
+    const posts = useSelector((state) => state.post.posts)
 
     useEffect(() => {
       (async () => {
