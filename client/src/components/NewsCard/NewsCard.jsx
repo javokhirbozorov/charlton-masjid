@@ -1,20 +1,29 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './newscard.css'
 
-const NewsCard = ({news}) => {
+const NewsCard = ({news, oneCard}) => {
   return(
-    <div className="flex justify-center" id='newscard'>
-      <div className="rounded-lg shadow-lg bg-white">
-        <img className="rounded-t-lg" src={news.imgLink} alt=""/>
-        <div  className="p-6 bg-yellow-500">
-          <h5  className="text-gray-900 text-xl font-medium mb-2">{news.title}</h5>
-          <p className="text-gray-700 text-base mb-4">
-            {news.body}
-          </p>
-          <button type="button" className=" inline-block px-6 py-2.5 bg-green-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-700 hover:shadow-lg focus:bg-green-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-800 active:shadow-lg transition duration-150 ease-in-out">Button</button>
+    <div key={news.id} >
+    
+        <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-yellow-500 xl:aspect-w-7 xl:aspect-h-8">
+          <p className="mt-1 text-lg font-medium text-green-600">{news.title}</p>
+            <img
+              src={news.imgLink}
+              alt=''
+              className="h-full w-full object-cover object-center group-hover:opacity-75"
+            />
         </div>
-      </div>
-    </div>
+
+          <p className="mt-1 text-lg font-medium text-green-900" id='clip'>{news.body}</p>
+
+         <Link to={`/news/${news.id}`}>
+      <button onClick={() => oneCard(news.id)} class="bg-yellow-500 hover:bg-yellow-700 text-green font-bold py-2 px-4 rounded-full">
+      Read completely
+
+      </button>
+    </Link>       
+     </div>
   )  
 }
 

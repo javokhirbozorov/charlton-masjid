@@ -9,7 +9,7 @@ const PostCard = ({post , OnePost}) => {
       <img className="rounded-t-lg" src={post.imgLink} alt=""/>
     <div  className="p-6 bg-green-200">
       <h5  className="text-gray-900 text-xl font-medium mb-2">{post.title}</h5>
-      <p className="text-gray-700 text-base mb-4">
+      <p className="text-gray-700 text-base mb-4" id='clip'>
         {post.body}
       </p>
       <Link to={`/posts/${post.id}`}>

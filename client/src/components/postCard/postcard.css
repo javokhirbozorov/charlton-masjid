@@ -1,3 +1,9 @@
 #postcard{
     margin-top: 50px;
 }
+
+#clip{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

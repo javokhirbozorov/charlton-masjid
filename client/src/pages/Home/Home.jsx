@@ -7,6 +7,7 @@ import "./home.css"
 const Home = () => {
 return(
   <div>
+    <h1 className='text-center text-4xl mb-16' >Charlton Masjid Trust</h1>
   <div>
     <Carousel />
   </div>

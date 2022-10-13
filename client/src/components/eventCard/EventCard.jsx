@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import "./eventscard.css";
 
-const EventCard = ( { product, oneCard} ) => {
+const EventCard = ( { product, oneEvent} ) => {
   return (
     <div key={product.id} >
     
-        <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8">
-          <p className="mt-1 text-lg font-medium text-gray-900">{product.title}</p>
+        <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-green-600 xl:aspect-w-7 xl:aspect-h-8">
+          <p className="mt-1 text-lg font-medium text-yellow-600">{product.title}</p>
             <img
               src={product.imgLink}
               alt=''
@@ -14,13 +15,12 @@ const EventCard = ( { product, oneCard} ) => {
             />
         </div>
 
-          <h3 className="mt-4 text-sm text-gray-700">{product.title}</h3>
-          <p className="mt-1 text-lg font-medium text-gray-900">{product.body}</p>
+          <p className="mt-1 text-lg font-medium text-yellow-900" id='clip'>{product.body}</p>
       
 
 
     <Link to={`/events/${product.id}`}>
-      <button onClick={() => oneCard(product.id)} class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+      <button onClick={() => oneEvent(product.id)} class="bg-green-500 hover:bg-green-700 text-yellow font-bold py-2 px-4 rounded-full">
       Read completely
 
       </button>

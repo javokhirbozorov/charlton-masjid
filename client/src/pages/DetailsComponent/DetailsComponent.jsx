@@ -10,7 +10,7 @@ const DetailsComponent = () => {
         {element.date ? <h3>Date: {element.date}</h3>
             : ""
         }
-        <h3>{element.name || element.title}</h3>
+        <h3><b>{element.name || element.title}</b></h3>
         <p>{element.imageAlt || element.body}</p>
     </div>
   )

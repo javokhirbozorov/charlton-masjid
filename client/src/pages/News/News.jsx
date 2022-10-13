@@ -6,7 +6,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import NewsCard from '../../components/NewsCard/NewsCard';
 import { Allnews } from '../../store/actions';
 import { oneCard } from '../../store/actions';
-import { EventCard } from '../../components';
 
 
 const News = () => {
@@ -43,12 +42,7 @@ const News = () => {
         {
           products.map((product) => (
 
-          //  <NewsCard news={ product }/>
-
-
-            <EventCard product={ product } oneCard={OneNews}/>
-
-
+            <NewsCard news={ product } oneCard={OneNews}/>
           ))
         }
       </div>

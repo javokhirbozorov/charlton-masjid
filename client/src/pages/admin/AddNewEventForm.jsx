@@ -5,7 +5,7 @@ export default function AddNewEventForm() {
       const [date, setDate] = useState('')
       const [title, setTitle] = useState('')
       const [body, setBody] = useState('')
-      const [img, setImg] = useState('https://yt3.ggpht.com/a/AATXAJyHKmL3llITwVy2v9gWP5Mr_fFKV8o0RnLYgtr3=s900-c-k-c0xffffffff-no-rj-mo')
+      const [img, setImg] = useState('https://ae01.alicdn.com/kf/HTB1VFlYXbr1gK0jSZR0q6zP8XXa5/-.jpg')
 
         const OnDate = (e) => {
           setDate(e.target.value)
@@ -17,9 +17,12 @@ export default function AddNewEventForm() {
         setBody(e.target.value)
        }
        const onImg = (e) => {
-        setImg(e.target.value)
-        console.log(img)
-       }
+        if(e.target.value){
+          setImg(e.target.value);    
+        }else{
+          setImg("https://ae01.alicdn.com/kf/HTB1VFlYXbr1gK0jSZR0q6zP8XXa5/-.jpg")
+        }
+        }
 
        const EventSubmit = async function (e) {
         e.preventDefault();
@@ -28,7 +31,7 @@ export default function AddNewEventForm() {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({title: title, body: body, imgLink: img, date: date, adminId: "1" })
+          body: JSON.stringify({title: title, body: body, imgLink: img, date: date })
         })
         const result = response.json().then((event) => alert(event.info) )
        }

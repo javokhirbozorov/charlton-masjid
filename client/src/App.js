@@ -57,6 +57,7 @@ function App() {
                 <Route path="/news/:id" element={<DetailsComponent />} />
                 <Route path="/posts/:id" element={<DetailsComponent />} />
                 <Route path='/about' element={ <AboutPage/> }></Route>
+                <Route path='/payment' element={<Payment />} />
                 <Route path='/signup' element={ <Signup/> }></Route>
                 <Route path='/news' element={ <News/> }></Route>
                 <Route path='/donations' element={ <Donations/> }></Route>
