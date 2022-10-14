@@ -12,3 +12,6 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+#imgid{
+    height: 140px;
+}

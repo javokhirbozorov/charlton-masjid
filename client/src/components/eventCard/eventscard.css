@@ -8,3 +8,6 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+#imgid{
+    width: 200px;
+}

@@ -11,7 +11,8 @@ const NewsCard = ({news, oneCard}) => {
             <img
               src={news.imgLink}
               alt=''
-              className="h-full w-full object-cover object-center group-hover:opacity-75"
+              className="object-cover object-center group-hover:opacity-75"
+              id='imgid'
             />
         </div>
 

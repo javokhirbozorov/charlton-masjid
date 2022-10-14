@@ -21,7 +21,7 @@ const Prayer = () => {
   return (
     <div className="w-3/4 flex justify-center text-center">
     <div className="fixed py-16 px-4">
-      <div className="text-center aspect-w-1 aspect-h-1 w-56 h-40 overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8" style={{ padding: '5px' }}>
+      <div className="text-center aspect-w-1 aspect-h-1 w-56 h-40 overflow-hidden rounded-lg xl:aspect-w-7 xl:aspect-h-8" style={{ padding: '5px' }} id="pr">
         <p className="mt-1 text-lg font-medium text-gray-900">Prayer time</p>
           <div className='prayer'>
               <div>Fajr</div>

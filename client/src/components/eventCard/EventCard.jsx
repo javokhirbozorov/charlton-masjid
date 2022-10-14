@@ -11,7 +11,8 @@ const EventCard = ( { product, oneEvent} ) => {
             <img
               src={product.imgLink}
               alt=''
-              className="h-full w-full object-cover object-center group-hover:opacity-75"
+              className="object-cover object-center group-hover:opacity-75"
+              id='imgid'
             />
         </div>
 
