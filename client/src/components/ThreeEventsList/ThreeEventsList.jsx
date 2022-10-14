@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 const ThreeEventsList = () => {
-    const products = [{id: 1, imgLink: "https://newvz.ru/wp-content/uploads/2018/11/london.jpg", title:"Title"}, {id:2, imgLink: 'https://phonoteka.org/uploads/posts/2021-05/1621774166_23-phonoteka_org-p-fon-religiya-islam-24.jpg', title: "Event"}, {id: 3, imgLink: 'https://m.media-amazon.com/images/M/MV5BNWZiYzE0NzAtNGEyZS00ZjAwLTkzNWYtYTA3NWFhOGE2OTBjXkEyXkFqcGdeQXVyNTU4NjY5MzM@._V1_.jpg', title: "Happy Day!"}]
+    const products = [{id: 1, imgLink: "https://coursereport-production.imgix.net/uploads/school/logo/594/original/elbrus-bootcamp-logo.png?w=200&h=200&dpr=5&q=20", title:"Release from Elbrus"}, {id:2, imgLink: 'https://tatar-duslyk.ru/wp-content/uploads/2021/03/Bolgar_istoricheskiy_0.jpg', title: "16.10.2022 There will be cleaning on the territory of the masjid"}, {id: 3, imgLink: 'https://png.pngtree.com/png-vector/20190904/ourlarge/pngtree-stylish-moon-design-islamic-new-year-background-png-image_1722002.jpg', title: "New year to all Muslims"}]
   return (
     <div  className='events text-center'>
     <div>Events</div>

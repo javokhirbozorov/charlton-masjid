@@ -69,7 +69,7 @@ function App() {
                 <Route path='/donations' element={ <Donations/> }></Route>
                 <Route path='/login' element={ <Login/> }></Route>
 
-                <Route path='/admin' element={ <Admin/> }>
+                <Route path='/admin' element={ <Admin isAdmin={admin}/> }>
                   <Route path='news' element={ <NewsList/> }/>
                   <Route path='donates' element={ <DonationsList/> }/>
                   <Route path='events' element={ <EventsList/> }/>

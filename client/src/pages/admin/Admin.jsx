@@ -3,17 +3,23 @@ import styles from './admin.module.css'
 
 import { Link, Outlet } from 'react-router-dom'
 
-const adminNav = [
-  { id: 1, href: 'events', name: 'Events' },
-  { id: 2, href: 'news', name: 'News' },
-  { id: 3, href: 'donates', name: 'Donates' },
-  { id: 4, href: 'posts', name: 'Posts' },
-  { id: 5, href: 'admins', name: 'Admins' },
-]
 
 
-const Admin = () => {
-
+const Admin = ({isAdmin}) => {
+  
+  const adminNav = isAdmin.username === "King" ? [
+    { id: 1, href: 'events', name: 'Events' },
+    { id: 2, href: 'news', name: 'News' },
+    { id: 3, href: 'donates', name: 'Donates' },
+    { id: 4, href: 'posts', name: 'Posts' },
+    { id: 5, href: 'admins', name: 'Admins' },
+  ] : 
+  [
+    { id: 1, href: 'events', name: 'Events' },
+    { id: 2, href: 'news', name: 'News' },
+    { id: 3, href: 'donates', name: 'Donates' },
+    { id: 4, href: 'posts', name: 'Posts' },
+  ]
   const [addBtnLink, setAddBtnLink] = useState();
 
   const clickHandle = (e) => setAddBtnLink(e.target.id)
@@ -44,7 +50,11 @@ const Admin = () => {
           }
         </ul>
         <Link to={ `/admin/${ addBtnLink }/new` } className={ styles.adminNav_addBtn }> + </Link>
-        <Link to={ `/admin/admins/newAdmin` } className={ styles.adminNav_addBtn }> NewAdmin </Link>
+        {isAdmin.username === "King" ?
+
+          <Link to={ `/admin/admins/newAdmin` } className={ styles.adminNav_addBtn }> NewAdmin </Link>
+          : " "
+        }
       </div>  
 
 

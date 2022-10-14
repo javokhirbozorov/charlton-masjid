@@ -4,7 +4,7 @@ import "./threenewslist.css"
 import { Link } from 'react-router-dom';
 
 const ThreeNewsList = () => {
-  const products = [{id: 1, imgLink: "https://newvz.ru/wp-content/uploads/2018/11/london.jpg", title:"Title"}, {id:2, imgLink: 'https://phonoteka.org/uploads/posts/2021-05/1621774166_23-phonoteka_org-p-fon-religiya-islam-24.jpg', title: "Event"}, {id: 3, imgLink: 'https://m.media-amazon.com/images/M/MV5BNWZiYzE0NzAtNGEyZS00ZjAwLTkzNWYtYTA3NWFhOGE2OTBjXkEyXkFqcGdeQXVyNTU4NjY5MzM@._V1_.jpg', title: "Happy Day!"}]
+  const products = [{id: 1, imgLink: "https://img.prosports.kz/news/content//202210/252152_5877ed56216a6a8593bc366145865cfa.webp", title:"Tottenham vs Everton"}, {id:2, imgLink: 'https://media.az/file/articles/2022/10/13/1665656868_311712109_669257254554056_6845644138425853219_n.jpg', title: "Ilham Aliyev met with Iranian President Seyed"}, {id: 3, imgLink: 'https://cdnstatic.rg.ru/uploads/images/223/27/32/form_photoreport_imageid_600884_cf7c7d7e1daefd01635079999.jpg', title: "New part coming soon"}]
         
   return (
     <div  className='news text-center'>

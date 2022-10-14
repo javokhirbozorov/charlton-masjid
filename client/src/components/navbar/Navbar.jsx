@@ -154,7 +154,7 @@ import {
                  <div className="hidden items-center justify-end md:flex md:flex-1 lg:w-0">        
                   <form onSubmit={onSessOut}>
 
-                <button type='submit' className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700">
+                <button type='submit' className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-green-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-green-700">
              
              Logout
           
@@ -163,13 +163,13 @@ import {
                   </div>
            :
             <div className="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
-              <Link to='/signup' className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">
+{/*               <Link to='/signup' className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">
              
               Sign up
              
-              </Link>
+              </Link> */}
 
-              <Link to='/login' className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700">
+              <Link to='/login' className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-green-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-green-700">
              
                 Login
              
@@ -232,7 +232,7 @@ import {
                 {isAdmin.username ?              
                   <form onSubmit={onSessOut}>
 
-                <button type='submit' className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700">
+                <button type='submit' className="flex w-full items-center justify-center rounded-md border border-transparent bg-green-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-green-700">
              
              Logout
           
@@ -241,18 +241,19 @@ import {
                   <>
                     <Link
                     to='/login'
-                    className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
+                    className="flex w-full items-center justify-center rounded-md border border-transparent bg-green-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-green-700"
                     >
                     Login
                   </Link>
                   <p className="mt-6 text-center text-base font-medium text-gray-500">
+{/*   
                     Existing customer?{' '}
-                    <Link 
+              <Link 
                       to='/signup' 
                       className="text-indigo-600 hover:text-indigo-500"
                       >
                       Sign up
-                    </Link>
+                    </Link> */}
                   </p> 
                         </>
                 }

@@ -28,24 +28,54 @@ const features = [
     icon: ChatBubbleBottomCenterTextIcon,
   },
 ]
-
+const str = "THE PURPOSE OF THE CHARITY IS THROUGHOUT THE WORLD AND   MORE   PARTICULARLY   IN   THE   ROYAL   BOROUGH   OF GREENWICH   AND   IN   THE   UNITED   KINGDOM   THE ADVANCEMENT OF THE FAITH AND RELIGIOUS PRACTICES OF ISLAM  IN  ACCORDANCE  WITH  THE  QUR’AN  AND  THE  SUNNAH AMONGST   MUSLIMS   IN   PARTICULAR   AND   MEMBERS   OF   THE PUBLIC IN GENERAL THROUGH THE PROVISION OF A MOSQUE AND   INCLUDING   THE   FOLLOWING   ACTIVITIES:   (A)   EDUCATING THE PUBLIC IN THE TEACHINGS AND PRACTICES OF ISLAM; (B) PROVIDING RECREATIONAL FACILITIES AND ACTIVITIES IN THE INTERESTS   OF   SOCIAL   WELFARE   WITH   THE   OBJECT   OF IMPROVING   THE   CONDITIONS   OF   LIFE   FOR   THOSE   PERSONS IN NEED OF SUCH FACILITIES AND ACTIVITIES;  (C) RELIEVING THOSE IN NEED DUE TO POVERTY, SICKNESS AND SUFFERING IRRESPECTIVE OF THEIR NATIONALITY, RACE, ETHNIC ORIGIN AND   RELIGIOUS   BELIEFS;   (D)   PROMOTING   RACIAL   AND RELIGIOUS   HARMONY;   AND;   (E)   WORKING   TOWARDS   THE ELIMINATION   OF   DISCRIMINATION   ON   THE   GROUNDS   OF RELIGION AND RACE."
+const str2 = str.toLocaleLowerCase();
 
 export default function Example() {
   return (
     <div className="bg-white py-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="lg:text-center">
-          <h2 className="text-lg font-semibold text-indigo-600">Transactions</h2>
           <p className="mt-2 text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl">
-            A better way to send money
+            CHARLTON MASJID TRUST
           </p>
           <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-            Lorem ipsum dolor sit amet consect adipisicing elit. Possimus magnam voluptatum cupiditate veritatis in
-            accusamus quisquam.
+
+ {str2}
           </p>
         </div>
 
-        <div className="mt-10">
+        <b>What the charity does:</b>
+
+          <li>General Charitable Purposes</li>
+          <li>Education/training</li>
+          <li>Disability</li>
+          <li>The Prevention Or Relief Of Poverty</li>
+          <li>Religious Activities</li>
+          <li>Human Rights/religious Or Racial Harmony/equality Or Diversity</li>
+        
+
+        <b>Who the charity helps:</b>
+
+        <li>Children/young People</li>
+        <li>Elderly/old People</li>
+        <li>Other Defined Groups</li>
+        <li>The General Public/mankind</li>
+        
+
+        <b>How the charity helps:</b>
+
+        <li>Provides Buildings/facilities/open Space</li>
+        <li>Provides Services</li>
+        <li>Provides Advocacy/advice/information</li>
+
+
+        <b>Where the charity operates:</b>
+        <li>Greenwich</li>
+        <li>Lewisham</li>
+
+
+{/*         <div className="mt-10">
           <dl className="space-y-10 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10 md:space-y-0">
             {features.map((feature) => (
               <div key={feature.name} className="relative">
@@ -59,7 +89,7 @@ export default function Example() {
               </div>
             ))}
           </dl>
-        </div>
+        </div> */}
       </div>
     </div>
   )
