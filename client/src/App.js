@@ -56,7 +56,7 @@ function App() {
 
               <Routes>
 
-                <Route path='/' element={ <Home isAdmin={admin}/> }></Route>
+                <Route path='/' element={ <Home /> }></Route>
                 <Route path='/news' element={<News />}></Route>
                 <Route path='/events' element={ <Events/> }></Route>
                 <Route path="/events/:id" element={<DetailsComponent />} />

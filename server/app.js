@@ -32,6 +32,7 @@ const DelNewsRoute = require('./src/routes/DelNewsRoute');
 const DelEventRoute = require('./src/routes/DelEventRoute');
 const DelDonateRoute = require('./src/routes/DelDonateRoute');
 const DelAdminRoute = require('./src/routes/DelAdminRoute');
+const Logout = require('./src/routes/Logout');
 
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, '../public/')));
@@ -39,13 +40,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 dbCheck();
-
-const corsOptions = {
-  credentials: true,
-  origin: 'http://localhost:3000',
-};
-
-app.use(cors(corsOptions));
 const sessionConfig = {
   name: 'Session',
   store: new FileStore(),
@@ -57,6 +51,13 @@ const sessionConfig = {
     httpOnly: true,
   },
 };
+
+const corsOptions = {
+  credentials: true,
+  origin: 'http://localhost:3000',
+};
+app.use(cors(corsOptions));
+
 app.use(session(sessionConfig));
 
 // роутинг
@@ -75,6 +76,7 @@ app.use('/delpost', DelPostRoute);
 app.use('/delnews', DelNewsRoute);
 app.use('/delevent', DelEventRoute);
 app.use('/deldonate', DelDonateRoute);
+app.use('/logout', Logout);
 app.use('/deladmin', DelAdminRoute);
 
 const PORT = process.env.PORT || 3001;
