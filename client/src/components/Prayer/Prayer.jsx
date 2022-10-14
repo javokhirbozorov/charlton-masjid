@@ -22,24 +22,24 @@ const Prayer = () => {
     <div className="w-3/4 flex justify-center text-center">
     <div className="fixed py-16 px-4">
       <div className="text-center aspect-w-1 aspect-h-1 w-56 h-40 overflow-hidden rounded-lg xl:aspect-w-7 xl:aspect-h-8" style={{ padding: '5px' }} id="pr">
-        <p className="mt-1 text-lg font-medium text-gray-900">Prayer time</p>
-          <div className='prayer'>
+        <p className="mt-1 text-lg font-medium text-white">Prayer time</p>
+          <div className='prayer text-white'>
               <div>Fajr</div>
               <div>{times.fajr}</div>
           </div>
-          <div className='prayer'>
+          <div className='prayer text-white'>
               <div>Dhuhr</div>
               <div>{times.dhuhr}</div>
           </div>
-          <div className='prayer'>
+          <div className='prayer text-white'>
               <div>Asr</div>
               <div>{times.asr}</div>
           </div>
-          <div className='prayer'>
+          <div className='prayer text-white'>
               <div>Magrib</div>
               <div>{times.magrib}</div>
           </div>
-          <div className='prayer'>
+          <div className='prayer text-white'>
               <div>Isha</div>
               <div>{times.isha}</div>
           </div>
