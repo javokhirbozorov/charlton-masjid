@@ -6,7 +6,7 @@ const PostCard = ({post , OnePost}) => {
   return(
     <div key={post.id} className="flex justify-center" id='postcard'>
   <div className="rounded-lg shadow-lg bg-white max-w-sm">
-      <img className="rounded-t-lg" src={post.imgLink} alt=""/>
+      <img className="rounded-t-lg" src={post.imgLink} alt="" id='imgpost'/>
     <div  className="p-6 bg-green-200">
       <h5  className="text-gray-900 text-xl font-medium mb-2">{post.title}</h5>
       <p className="text-gray-700 text-base mb-4" id='clip'>

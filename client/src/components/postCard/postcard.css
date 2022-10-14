@@ -7,3 +7,6 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+#imgpost{
+    height: 260px;
+}
