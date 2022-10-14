@@ -38,7 +38,7 @@ const Donations = () => {
 
         {
           donationList.map((donation) => (
-            <DonateCard donation={donation} />
+            <DonateCard id ={donation.id} donation={donation} />
 
 
           ))

@@ -14,8 +14,8 @@ router.get('/', async (req, res) => {
 router.post('/makePayment', async (req, res) => {
   try {
     console.log(req.body);
-    const { donationAmount, id } = req.body;
-    const donation = await Donation.findByPk(id);
+    const { donationAmount, donationId } = req.body;
+    const donation = await Donation.findByPk(donationId);
     let { total } = donation;
     total += Number(donationAmount);
     donation.total = total;
