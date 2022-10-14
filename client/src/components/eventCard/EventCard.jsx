@@ -7,7 +7,7 @@ const EventCard = ( { product, oneEvent} ) => {
     <div key={product.id} >
     
         <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-green-600 xl:aspect-w-7 xl:aspect-h-8">
-          <p className="mt-1 text-lg font-medium text-yellow-600">{product.title}</p>
+          <p className="mt-1 text-lg font-medium text-yellow-600" id='cliptitle'>{product.title}</p>
             <img
               src={product.imgLink}
               alt=''

@@ -7,7 +7,7 @@ const NewsCard = ({news, oneCard}) => {
     <div key={news.id} >
     
         <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-yellow-500 xl:aspect-w-7 xl:aspect-h-8">
-          <p className="mt-1 text-lg font-medium text-green-600">{news.title}</p>
+          <p className="mt-1 text-lg font-medium text-green-600" id='cliptitle'>{news.title}</p>
             <img
               src={news.imgLink}
               alt=''

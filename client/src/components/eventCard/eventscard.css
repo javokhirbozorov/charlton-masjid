@@ -3,3 +3,8 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+#cliptitle{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
