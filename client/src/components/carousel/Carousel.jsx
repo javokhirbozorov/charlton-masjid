@@ -43,7 +43,7 @@ const Carousel = () => {
     </div>
     <div className="carousel-item float-left w-full">
       <img
-        src="https://wallup.net/wp-content/uploads/2017/11/17/227388-books-Islam-Quran.jpg"
+        src="https://rare-gallery.com/mocahbig/78965-Sunset-Turkey-IslamMosque-4k-Ultra-HD-Wallpaper.jpg"
         className="block max-h-96  w-full"
         alt="Exotic Fruits"
       />

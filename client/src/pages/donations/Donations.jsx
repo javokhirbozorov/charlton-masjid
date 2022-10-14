@@ -31,7 +31,7 @@ const Donations = () => {
   }, [dispatch])
   return (
     <>
-      <h1 className='text-center text-4xl mb-16' > Online Donations</h1>
+      <h1 className='text-center text-4xl mb-16' id='title'> Online Donations</h1>
 
       <Carousel />
       <div className="mt-32 flex flex-wrap justify-center">

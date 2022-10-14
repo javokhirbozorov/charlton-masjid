@@ -8,7 +8,7 @@ const Home = ({isAdmin}) => {
 
 return(
   <div>
-    <h1 className='text-center text-4xl mb-16' >Charlton Masjid Trust</h1>
+    <h1 className='text-center text-4xl mb-16' id='title'>Charlton Masjid Trust</h1>
   <div>
     <Carousel />
   </div>
